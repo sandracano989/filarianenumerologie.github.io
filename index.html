@@ -4,97 +4,142 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Filariane — Numérologie & Tarot</title>
+  <meta name="description" content="Consultations de numérologie et tirages de tarot pour éclairer votre chemin de vie. Disponible en ligne et en présentiel." />
+  <!-- Partage (aperçu Instagram/FB/WhatsApp) -->
+  <meta property="og:title" content="Filariane — Numérologie & Tarot" />
+  <meta property="og:description" content="Guidance, numérologie & tarot. Réservez votre séance." />
+  <meta property="og:url" content="https://filarianenumerologie.com/" />
+  <meta property="og:type" content="website" />
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-<a href="#tarot" class="underline-link">Tarot</a>
-<a href="#apropos" class="underline-link">À propos</a>
-<a href="#contact" class="underline-link">Contact</a>
-</nav>
-</div>
-</header>
+<body class="bg-white text-slate-900 antialiased">
 
+  <!-- Header dégradé -->
+  <header class="sticky top-0 z-40 border-b border-fuchsia-200 bg-gradient-to-r from-fuchsia-100 via-pink-100 to-purple-100/80 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-fuchsia-700 to-pink-700 text-lg">Filariane</a>
+      <nav class="flex gap-6 text-purple-700 font-medium">
+        <a href="#tarot" class="hover:underline">Tarot</a>
+        <a href="#apropos" class="hover:underline">À propos</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<main id="contenu">
-<!-- Fil d’Ariane -->
-<nav aria-label="Fil d’Ariane" class="max-w-6xl mx-auto px-4 py-2 text-sm text-slate-600">
-<ol itemscope itemtype="https://schema.org/BreadcrumbList" class="flex space-x-2">
-<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-<a itemprop="item" href="/" class="underline-link"><span itemprop="name">Accueil</span></a>
-<meta itemprop="position" content="1" />
-</li>
-<li>/</li>
-<li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-<span itemprop="name">Page actuelle</span>
-<meta itemprop="position" content="2" />
-</li>
-</ol>
-</nav>
+  <main id="contenu">
+    <!-- Fil d’Ariane -->
+    <nav aria-label="Fil d’Ariane" class="max-w-6xl mx-auto px-4 py-2 text-sm text-slate-600">
+      <ol itemscope itemtype="https://schema.org/BreadcrumbList" class="flex space-x-2">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="/" class="underline"><span itemprop="name">Accueil</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li>/</li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="name">Page actuelle</span>
+          <meta itemprop="position" content="2" />
+        </li>
+      </ol>
+    </nav>
 
+    <!-- Hero -->
+    <section class="max-w-6xl mx-auto px-4 pt-14 pb-12 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-fuchsia-700 to-pink-700">Filariane</span><br/>
+          <span class="text-pink-600">Numérologie & Tarot</span>
+        </h2>
+        <p class="mt-4 text-lg text-slate-700">
+          Consultations de numérologie, de guidance et tirages de tarot pour éclairer votre chemin de vie. Disponible en ligne et chez moi.
+        </p>
+        <a href="#contact"
+           class="mt-6 inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 text-white hover:from-pink-700 hover:to-purple-700 transition shadow">
+          Réserver une séance
+        </a>
+      </div>
+    </section>
 
-<!-- Hero -->
-<section class="max-w-6xl mx-auto px-4 pt-14 pb-12 grid md:grid-cols-2 gap-10 items-center">
-<div>
-<h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Filariane<br/><span class="text-sky-600">Numérologie & Tarot</span></h1>
-<p class="mt-4 text-lg text-slate-700">Consultations de numérologie, de guidance et tirages de tarot pour éclairer votre chemin de vie. Disponible en ligne et chez moi.</p>
-</div>
-</section>
+    <!-- Numérologie -->
+    <section id="services" class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-purple-700">Numérologie</h2>
+      <p class="mt-2 text-slate-700">
+        La numérologie révèle les clés de votre chemin de vie, vos défis et vos potentiels. Je propose des consultations personnalisées, adaptées à vos questions et vos besoins.
+      </p>
+    </section>
 
+    <!-- Tarot -->
+    <section id="tarot" class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-purple-700">Tarot</h2>
+      <p class="mt-2 text-slate-700">
+        Le tarot est un outil puissant de guidance et d’introspection. Grâce aux tirages, je vous aide à éclairer vos choix, comprendre vos blocages et avancer avec plus de clarté.
+      </p>
+      <a href="#contact"
+         class="mt-4 inline-block px-5 py-3 rounded-xl bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white hover:from-fuchsia-700 hover:to-pink-700 transition shadow">
+        Réserver un tirage
+      </a>
+    </section>
 
-<!-- Services -->
-<section id="services" class="max-w-6xl mx-auto px-4 py-16">
-<h2 class="text-2xl md:text-3xl font-bold">Numérologie</h2>
-<p class="mt-2 text-slate-700">La numérologie révèle les clés de votre chemin de vie, vos défis et vos potentiels. Je propose des consultations personnalisées, adaptées à vos questions et vos besoins.</p>
-</section>
+    <!-- À propos + Tarifs -->
+    <section id="apropos" class="max-w-3xl mx-auto px-4 py-16 bg-gradient-to-br from-fuchsia-50 via-pink-50 to-purple-50 rounded-2xl">
+      <h2 class="text-2xl md:text-3xl font-bold text-purple-700">À propos</h2>
+      <p class="mt-4 text-slate-700">
+        Je suis Arianex. En ces temps difficiles, la numérologie et le tarot peuvent vous guider. J’accompagne celles et ceux qui souhaitent mieux comprendre leur chemin de vie. Mes consultations sont disponibles en ligne et dans la région.
+      </p>
 
+      <h3 class="mt-6 text-xl font-semibold text-fuchsia-700">Tarifs</h3>
+      <ul class="mt-2 grid md:grid-cols-3 gap-4">
+        <li class="p-4 rounded-xl border border-fuchsia-200 bg-white/70 shadow-sm">
+          <p class="font-medium">Tirage simple</p>
+          <p class="text-2xl font-bold text-pink-600 mt-1">10 €</p>
+        </li>
+        <li class="p-4 rounded-xl border border-fuchsia-200 bg-white/70 shadow-sm">
+          <p class="font-medium">Numérologie + tirage</p>
+          <p class="text-2xl font-bold text-pink-600 mt-1">20 €</p>
+        </li>
+        <li class="p-4 rounded-xl border border-fuchsia-200 bg-white/70 shadow-sm">
+          <p class="font-medium">Guidance & suivi</p>
+          <p class="text-2xl font-bold text-pink-600 mt-1">40 €</p>
+        </li>
+      </ul>
+    </section>
 
-<!-- Tarot -->
-<section id="tarot" class="max-w-6xl mx-auto px-4 py-16">
-<h2 class="text-2xl md:text-3xl font-bold">Tarot</h2>
-<p class="mt-2 text-slate-700">Le tarot est un outil puissant de guidance et d’introspection. Grâce aux tirages, je vous aide à éclairer vos choix, comprendre vos blocages et avancer avec plus de clarté sur votre chemin de vie.</p>
-<a href="#contact" class="mt-4 inline-block px-5 py-3 rounded-xl bg-sky-600 text-white hover:bg-sky-700 transition">Réserver un tirage</a>
-</section>
+    <!-- Contact -->
+    <section id="contact" class="max-w-3xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-purple-700">Contact</h2>
+      <p class="mt-2 text-slate-700">
+        Vous pouvez m’écrire directement à :
+        <a href="mailto:ariana.pcss@proton.me" class="text-fuchsia-700 underline">ariana.pcss@proton.me</a>
+      </p>
 
+      <form class="mt-6 p-6 rounded-2xl border border-fuchsia-200 bg-white/80 shadow-sm"
+            action="mailto:contact@filarianenumerologie.com" method="post" enctype="text/plain">
+        <label class="block text-sm">Votre nom
+          <input class="mt-1 w-full rounded-xl border p-3" type="text" name="Nom" required>
+        </label>
+        <label class="block text-sm mt-4">Votre email
+          <input class="mt-1 w-full rounded-xl border p-3" type="email" name="Email" required>
+        </label>
+        <label class="block text-sm mt-4">Message
+          <textarea class="mt-1 w-full rounded-xl border p-3" name="Message" rows="4" required></textarea>
+        </label>
+        <button class="mt-4 px-5 py-3 rounded-xl text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition shadow"
+                type="submit">
+          Envoyer
+        </button>
+      </form>
+    </section>
+  </main>
 
-<!-- À propos -->
-<section id="apropos" class="max-w-3xl mx-auto px-4 py-16">
-<h2 class="text-2xl md:text-3xl font-bold">À propos</h2>
-<p class="mt-4 text-slate-700">Je suis Arianex. En ces temps difficiles, la numérologie et le tarot peuvent vous guider, j’accompagne celles et ceux qui souhaitent mieux comprendre leur chemin de vie. Mes consultations sont disponibles en ligne et dans la région. 
-- Tirage simple: 10 euros
-- Numérologie approfondie et tirage complet: 20 euros
-- Guidance approfondie et suivi: 40 euros</p>
-</section>
+  <!-- Footer -->
+  <footer class="border-t border-fuchsia-200">
+    <div class="max-w-6xl mx-auto px-4 py-8 text-sm text-slate-500 flex items-center justify-between">
+      <p>© <span id="annee"></span> Filariane. Tous droits réservés.</p>
+    </div>
+  </footer>
 
-
-<!-- Contact -->
-<section id="contact" class="max-w-3xl mx-auto px-4 py-16">
-<h2 class="text-2xl md:text-3xl font-bold">Contact</h2>
-<p class="mt-2 text-slate-700">Écrivez-moi pour toute demande de consultation à ce mail: ariana.pcss@proton.me</p>
-<form class="mt-6 p-6 rounded-2xl border" action="mailto:contact@filarianenumerologie.com" method="post" enctype="text/plain">
-<label class="block text-sm">Votre nom
-<input class="mt-1 w-full rounded-xl border p-3" type="text" name="Nom" required>
-</label>
-<label class="block text-sm mt-4">Votre email
-<input class="mt-1 w-full rounded-xl border p-3" type="email" name="Email" required>
-</label>
-<label class="block text-sm mt-4">Message
-<textarea class="mt-1 w-full rounded-xl border p-3" name="Message" rows="4" required></textarea>
-</label>
-<button class="mt-4 px-5 py-3 rounded-xl bg-sky-600 text-white hover:bg-sky-700 transition" type="submit">Envoyer</button>
-</form>
-</section>
-</main>
-
-
-<footer class="border-t border-slate-200">
-<div class="max-w-6xl mx-auto px-4 py-8 text-sm text-slate-500 flex items-center justify-between">
-<p>© <span id="annee"></span> Filariane. Tous droits réservés.</p>
-</div>
-</footer>
-
-
-<script>
-document.getElementById('annee').textContent = new Date().getFullYear();
-</script>
+  <script>
+    document.getElementById('annee').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
