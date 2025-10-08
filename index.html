@@ -30,4 +30,175 @@
       box-shadow: 0 0 20px rgba(255, 215, 0, 0.35);
     }
     .btn-or:hover {
+      background-position: right center;
+      transform: translateY(-1px);
+      box-shadow: 0 0 35px rgba(255, 215, 0, 0.55);
+    }
+
+    /* Texte doré réaliste */
+    .text-or {
+      background: linear-gradient(
+        to right,
+        #f5e19c 0%,
+        #ffd700 25%,
+        #fff2b2 50%,
+        #e3c565 75%,
+        #b8860b 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Bordure dorée profonde */
+    .border-or {
+      border-color: rgba(255, 215, 0, 0.5);
+    }
+
+    /* Fond mystique violet profond */
+    body {
+      background: linear-gradient(135deg, #0a0216 0%, #1b0b33 40%, #0e0321 100%);
+    }
+  </style>
+</head>
+
+<body class="antialiased text-slate-100">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-slate-800/70 bg-slate-900/70 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 text-lg">
+        Filariane
+      </a>
+      <nav class="flex gap-6 text-slate-200">
+        <a href="#tarot" class="hover:text-fuchsia-300 transition">Tarot</a>
+        <a href="#apropos" class="hover:text-fuchsia-300 transition">À propos</a>
+        <a href="#contact" class="hover:text-fuchsia-300 transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- Liens secondaires -->
+    <div class="mt-2 flex flex-wrap gap-3 justify-center text-sm">
+      <a href="/avignon.html" class="text-fuchsia-300 hover:underline">Tarot Avignon</a>
+      <span class="text-slate-500">•</span>
+      <a href="/carpentras.html" class="text-fuchsia-300 hover:underline">Numérologie Carpentras</a>
+      <span class="text-slate-500">•</span>
+      <a href="/en-ligne.html" class="text-fuchsia-300 hover:underline">Consultations en ligne</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="max-w-6xl mx-auto px-4 pt-14 pb-12 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400">
+            Filariane
+          </span><br/>
+          <span class="text-or">Numérologie Guématria & Tarot de Marseille</span>
+        </h1>
+        <p class="mt-4 text-lg text-slate-300">
+          Consultations de numérologie, guidance et tirages de tarot pour éclairer votre chemin de vie — en ligne ou chez moi sur Avignon/Carpentras.
+        </p>
+
+        <div class="mt-6 flex justify-center">
+          <img src="/lune1.jpg"
+               alt="Croissant de lune"
+               class="rounded-full shadow-lg border border-slate-700 w-40 h-40 object-cover" />
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#tarifs" class="px-6 py-3 rounded-xl btn-or">
+            ✨ Voir les tarifs
+          </a>
+          <a href="#contact" class="px-6 py-3 rounded-xl border border-or text-fuchsia-200 hover:bg-fuchsia-500/10 transition">
+            Me contacter
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tarifs -->
+    <section id="tarifs" class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">Tarifs</h2>
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 shadow-lg">
+          <h3 class="text-xl font-semibold text-fuchsia-300">Tirage simple</h3>
+          <p class="mt-2 text-slate-300">Question précise, tirage ciblé.</p>
+          <p class="mt-5 text-4xl font-extrabold text-pink-400">25 €</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 shadow-lg ring-2 ring-fuchsia-500/30">
+          <h3 class="text-xl font-semibold text-fuchsia-300">Numérologie + tirage</h3>
+          <p class="mt-2 text-slate-300">Vue d’ensemble + guidance sur vos choix.</p>
+          <p class="mt-5 text-4xl font-extrabold text-fuchsia-400">35 €</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 shadow-lg">
+          <h3 class="text-xl font-semibold text-fuchsia-300">Guidance & suivi</h3>
+          <p class="mt-2 text-slate-300">Approfondissement + suivi personnalisé.</p>
+          <p class="mt-5 text-4xl font-extrabold text-purple-400">45 €</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- À propos -->
+    <section id="apropos" class="max-w-3xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">À propos</h2>
+      <p class="mt-4 text-slate-300 leading-relaxed">
+        Je suis Ariane.<br><br>
+        Ayant un don, je le mets à votre service en utilisant la numérologie Guématria Hébraïque Kabbalistique et le tarot de Marseille.<br><br>
+        Je vous guide vers une compréhension plus profonde de votre chemin de vie et de ce qui est caché.
+        Ces outils révèlent vos blocages, vos forces, et montrent les vérités.<br><br>
+        Chaque séance est une clé de clarté et de transformation : un vrai éclairage qui vous permet d’avoir une réelle prise de conscience.<br><br>
+        Les séances sont disponibles au téléphone, en visio, en ligne et en Vaucluse (Carpentras, Avignon, Orange) et à mon domicile.
+      </p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="max-w-3xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">Contact</h2>
+
+      <div class="mt-4 flex flex-wrap gap-3">
+        <a href="mailto:ariana.pcss@proton.me" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-or bg-slate-900/60 text-fuchsia-200 hover:bg-fuchsia-500/10 transition">
+          📧 ariana.pcss@proton.me
+        </a>
+        <a href="https://instagram.com/sandra_cnx" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-or bg-slate-900/60 text-fuchsia-200 hover:bg-fuchsia-500/10 transition">
+          📸 @sandra_cnx
+        </a>
+        <a href="tel:+33782580716" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-or bg-slate-900/60 text-fuchsia-200 hover:bg-fuchsia-500/10 transition">
+          📞 07 82 58 07 16
+        </a>
+      </div>
+
+      <!-- Formulaire -->
+      <form class="mt-6 p-6 rounded-2xl border border-or bg-slate-900/60 shadow"
+            action="mailto:ariana.pcss@proton.me" method="post" enctype="text/plain">
+        <label class="block text-sm">Votre nom
+          <input class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100 placeholder-slate-400" type="text" name="Nom" placeholder="Votre nom" required>
+        </label>
+        <label class="block text-sm mt-4">Votre email
+          <input class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100 placeholder-slate-400" type="email" name="Email" placeholder="email@exemple.com" required>
+        </label>
+        <label class="block text-sm mt-4">Message
+          <textarea class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100 placeholder-slate-400" name="Message" rows="4" placeholder="Votre message..." required></textarea>
+        </label>
+        <button class="mt-5 px-5 py-3 rounded-xl btn-or" type="submit">
+          ✨ Envoyer
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/70">
+    <div class="max-w-6xl mx-auto px-4 py-8 text-sm text-slate-400 flex items-center justify-between">
+      <p>© <span id="annee"></span> Filariane. Tous droits réservés.</p>
+      <p class="text-fuchsia-200">Consultations en ligne et à Carpentras</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('annee').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
