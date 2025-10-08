@@ -4,84 +4,82 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Filariane — Tarot de Marseille & Numérologie Guématria</title>
+  <meta name="description" content="Guidance par le tarot de Marseille & la numérologie Guématria. Séances en ligne ou chez moi sur Avignon/Carpentras." />
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* --- Animations --- */
-    @keyframes breathe {0%,100%{opacity:.9;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
-    @keyframes outerGlow {0%,100%{opacity:.5;filter:blur(18px);}50%{opacity:.9;filter:blur(28px);}}
 
-    /* --- Logo avec halo rose-violet --- */
-    .logo-pulse {
-      position:relative;
-      display:inline-block;
-      font-weight:800;
+  <style>
+    /* ===== Animations ===== */
+    @keyframes breathe { 0%,100%{opacity:.9;transform:scale(1)} 50%{opacity:1;transform:scale(1.04)} }
+    @keyframes outerGlow { 0%,100%{opacity:.5;filter:blur(18px);} 50%{opacity:.9;filter:blur(28px);} }
+    @keyframes sheen { 0%{transform:translateX(-140%) rotate(18deg)} 100%{transform:translateX(140%) rotate(18deg)} }
+
+    /* ===== Logo pulsant + halo rose/violet ===== */
+    .logo-pulse{
+      position:relative;display:inline-block;font-weight:800;
       background:linear-gradient(90deg,#a78bfa,#f0abfc,#f472b6);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
       animation:breathe 4s ease-in-out infinite;
     }
-    .logo-pulse::before {
-      content:"";
-      position:absolute;
-      inset:-10px;
-      border-radius:1rem;
+    .logo-pulse::before{
+      content:"";position:absolute;inset:-10px;border-radius:1rem;
       background:radial-gradient(circle at 50% 50%,rgba(236,72,153,.45),rgba(168,85,247,.45),transparent 70%);
-      filter:blur(20px);
-      z-index:-1;
-      animation:outerGlow 6s ease-in-out infinite;
+      filter:blur(20px);z-index:-1;animation:outerGlow 6s ease-in-out infinite;
     }
 
-    /* --- Boutons --- */
-    .btn-rose {
+    /* ===== Boutons ===== */
+    .btn-rose{
       background-image:linear-gradient(90deg,#d946ef,#ec4899,#9333ea);
       color:#fff;border-radius:.75rem;padding:.75rem 1.5rem;
       box-shadow:0 0 24px rgba(236,72,153,.35);
       animation:breathe 4s ease-in-out infinite;
-      transition:transform .3s ease,box-shadow .3s ease;
+      transition:transform .3s ease,box-shadow .3s ease; display:inline-block;
     }
     .btn-rose:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(236,72,153,.55);}
 
     .btn-or-amber{
-      position:relative;display:inline-block;
-      padding:.75rem 1.5rem;border-radius:.75rem;
+      position:relative;display:inline-block;padding:.75rem 1.5rem;border-radius:.75rem;
       background:linear-gradient(125deg,#b58e2a 0%,#e6c57a 45%,#c7922e 100%);
-      color:#1a1a1a;font-weight:700;
-      box-shadow:0 0 18px rgba(230,181,80,.25);
-      overflow:hidden;
-      transition:all .4s ease;
+      color:#1a1a1a;font-weight:700;box-shadow:0 0 18px rgba(230,181,80,.25);
+      overflow:hidden;transition:all .4s ease;animation:breathe 6s ease-in-out infinite;
     }
     .btn-or-amber:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(230,181,80,.4);}
+    .btn-or-amber::after{
+      content:"";position:absolute;top:-30%;bottom:-30%;left:-60%;width:50%;
+      background:linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.12),rgba(255,255,255,0));
+      mix-blend-mode:screen;filter:blur(2px);animation:sheen 5s linear infinite;
+    }
 
-    /* --- Titres dorés --- */
-    .text-or {
+    /* ===== Titre doré ===== */
+    .text-or{
       background:linear-gradient(to right,#f1dd9a,#e6c57a,#fff2b2,#d9b461,#b5882a);
       -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-      animation:breathe 4s ease-in-out infinite;
-      display:inline-block;
+      display:inline-block;animation:breathe 4s ease-in-out infinite;
     }
 
-    /* --- Cartes prix : halo externe --- */
-    .price-card {
-      position:relative;
-      border:1px solid rgba(236,72,153,.3);
-      background-color:rgba(15,15,25,.5);
-      border-radius:1rem;
-      overflow:hidden;
+    /* ===== Cartes de prix : fond comme la page (transparent) + halo EXTERNE ===== */
+    .glow-wrap{ position:relative; border-radius:1rem; }
+    .glow-wrap::before{
+      content:""; position:absolute; inset:-14px; border-radius:inherit;
+      background: radial-gradient(120% 120% at 50% 0%,
+                  rgba(236,72,153,.50) 0%,
+                  rgba(168,85,247,.45) 55%,
+                  transparent 72%);
+      filter: blur(22px); animation: outerGlow 5s ease-in-out infinite;
+      pointer-events:none; z-index:0;
     }
-    .price-card::after {
-      content:"";
-      position:absolute;
-      inset:-8px;
-      border-radius:1.3rem;
-      background:linear-gradient(135deg,rgba(236,72,153,.5),rgba(168,85,247,.45),rgba(236,72,153,.5));
-      z-index:-1;
-      filter:blur(22px);
-      animation:outerGlow 5s ease-in-out infinite;
+    .price-card{
+      position:relative; z-index:1;
+      /* AUCUN fond : même fond que la page */
+      background: transparent;
+      /* AUCUNE vraie bordure, on laisse le halo faire l'encadrement */
+      border: 1px solid transparent;
+      border-radius:1rem; overflow:hidden;
+      padding:1.5rem; /* équiv. p-6 */
     }
 
-    /* --- Contacts --- */
-    .text-amber-soft { color:#e8c27e;text-shadow:0 0 8px rgba(232,194,126,.15);}
-    .border-amber-soft { border-color:rgba(232,194,126,.45);}
+    /* ===== Contacts ambre doux ===== */
+    .text-amber-soft{color:#e8c27e;text-shadow:0 0 8px rgba(232,194,126,.15)}
+    .border-amber-soft{border-color:rgba(232,194,126,.45)}
   </style>
 </head>
 
@@ -99,7 +97,17 @@
     </div>
   </header>
 
-  <main>
+  <main id="contenu">
+
+    <!-- Liens secondaires (tes autres pages remises) -->
+    <div class="mt-2 flex flex-wrap gap-3 justify-center text-sm">
+      <a href="/avignon.html" class="text-fuchsia-300 hover:underline">Tarot Avignon</a>
+      <span class="text-slate-500">•</span>
+      <a href="/carpentras.html" class="text-fuchsia-300 hover:underline">Numérologie Carpentras</a>
+      <span class="text-slate-500">•</span>
+      <a href="/en-ligne.html" class="text-fuchsia-300 hover:underline">Consultations en ligne</a>
+    </div>
+
     <!-- Hero -->
     <section class="max-w-6xl mx-auto px-4 pt-14 pb-12 grid md:grid-cols-2 gap-10 items-center">
       <div>
@@ -112,7 +120,7 @@
         </p>
 
         <div class="mt-6 flex justify-center">
-          <img src="/lune1.jpg" alt="Croissant de lune" class="rounded-full shadow-lg border border-slate-700 w-40 h-40 object-cover"/>
+          <img src="/lune1.jpg" alt="Croissant de lune" class="rounded-full shadow-lg border border-slate-700 w-40 h-40 object-cover" />
         </div>
 
         <div class="mt-8 flex flex-wrap gap-4">
@@ -122,29 +130,47 @@
       </div>
     </section>
 
-    <!-- Tarifs -->
+    <!-- Tarifs (fond des cartes = comme la page, halo externe) -->
     <section id="tarifs" class="max-w-6xl mx-auto px-4 py-16">
       <h2 class="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-fuchsia-400 to-purple-400">Tarifs</h2>
+
       <div class="mt-6 grid md:grid-cols-3 gap-6">
-        <div class="p-6 price-card">
-          <h3 class="text-xl font-semibold text-or">Tirage simple</h3>
-          <p class="mt-2 text-slate-300">Question précise, tirage ciblé.</p>
-          <p class="mt-5 text-4xl font-extrabold text-pink-400">25 €</p>
+        <div class="glow-wrap">
+          <div class="price-card">
+            <h3 class="text-xl font-semibold text-or">Tirage simple</h3>
+            <p class="mt-2 text-slate-300">Question précise, tirage ciblé.</p>
+            <p class="mt-5 text-4xl font-extrabold text-pink-400">25 €</p>
+            <div class="mt-5">
+              <a href="#contact" class="btn-rose w-full text-center inline-block">Choisir ce tirage</a>
+            </div>
+          </div>
         </div>
-        <div class="p-6 price-card">
-          <h3 class="text-xl font-semibold text-or">Numérologie + tirage</h3>
-          <p class="mt-2 text-slate-300">Vue d’ensemble + guidance sur vos choix.</p>
-          <p class="mt-5 text-4xl font-extrabold text-fuchsia-400">35 €</p>
+
+        <div class="glow-wrap">
+          <div class="price-card">
+            <h3 class="text-xl font-semibold text-or">Numérologie + tirage</h3>
+            <p class="mt-2 text-slate-300">Vue d’ensemble + guidance sur vos choix.</p>
+            <p class="mt-5 text-4xl font-extrabold text-fuchsia-400">35 €</p>
+            <div class="mt-5">
+              <a href="#contact" class="btn-rose w-full text-center inline-block">Choisir ce tirage</a>
+            </div>
+          </div>
         </div>
-        <div class="p-6 price-card">
-          <h3 class="text-xl font-semibold text-or">Guidance & suivi</h3>
-          <p class="mt-2 text-slate-300">Approfondissement + suivi personnalisé.</p>
-          <p class="mt-5 text-4xl font-extrabold text-purple-400">45 €</p>
+
+        <div class="glow-wrap">
+          <div class="price-card">
+            <h3 class="text-xl font-semibold text-or">Guidance & suivi</h3>
+            <p class="mt-2 text-slate-300">Approfondissement + suivi personnalisé.</p>
+            <p class="mt-5 text-4xl font-extrabold text-purple-400">45 €</p>
+            <div class="mt-5">
+              <a href="#contact" class="btn-rose w-full text-center inline-block">Choisir ce tirage</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- À propos -->
+    <!-- À propos (ta présentation) -->
     <section id="apropos" class="max-w-3xl mx-auto px-4 py-16">
       <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">À propos</h2>
       <p class="mt-4 text-slate-300 leading-relaxed">
@@ -161,13 +187,13 @@
     <section id="contact" class="max-w-3xl mx-auto px-4 py-16">
       <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">Contact</h2>
       <div class="mt-4 flex flex-wrap gap-3">
-        <a href="mailto:ariana.pcss@proton.me" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60">
+        <a href="mailto:ariana.pcss@proton.me" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60 hover:bg-slate-900/80 transition">
           <span class="text-amber-soft">ariana.pcss@proton.me</span>
         </a>
-        <a href="https://instagram.com/sandra_cnx" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60">
+        <a href="https://instagram.com/sandra_cnx" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60 hover:bg-slate-900/80 transition">
           <span class="text-amber-soft">@sandra_cnx</span>
         </a>
-        <a href="tel:+33782580716" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60">
+        <a href="tel:+33782580716" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60 hover:bg-slate-900/80 transition">
           <span class="text-amber-soft">07 82 58 07 16</span>
         </a>
       </div>
@@ -194,9 +220,11 @@
       <p class="text-fuchsia-200">Consultations en ligne et à Carpentras</p>
     </div>
   </footer>
+
   <script>document.getElementById('annee').textContent=new Date().getFullYear();</script>
 </body>
 </html>
+
 
 
 
