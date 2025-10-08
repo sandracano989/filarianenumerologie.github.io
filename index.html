@@ -3,89 +3,85 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Filariane — Tarot de Marseille & Numérologie Guématria sur Carpentras et Avignon</title>
-  <meta name="description" content="Guidance par le tarot de Marseille & la numérologie Guématria. Séances en ligne ou chez moi sur Avignon. Réservez votre tirage." />
+  <title>Filariane — Tarot de Marseille & Numérologie Guématria</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
   <style>
     /* --- Animations --- */
-    @keyframes breathe { 0%,100%{opacity:.9;transform:scale(1)} 50%{opacity:1;transform:scale(1.04)} }
-    @keyframes sheen { 0%{transform:translateX(-140%) rotate(18deg)}100%{transform:translateX(140%) rotate(18deg)} }
-    @keyframes pulseHalo {
-      0%,100% { opacity:.45; transform:scale(1);}
-      50%     { opacity:.8; transform:scale(1.05);}
-    }
+    @keyframes breathe {0%,100%{opacity:.9;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+    @keyframes outerGlow {0%,100%{opacity:.5;filter:blur(18px);}50%{opacity:.9;filter:blur(28px);}}
 
-    /* --- Logo --- */
-    .logo-pulse{
-      position:relative;display:inline-block;
-      background-image:linear-gradient(90deg,#a78bfa,#f0abfc,#f472b6);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    /* --- Logo avec halo rose-violet --- */
+    .logo-pulse {
+      position:relative;
+      display:inline-block;
+      font-weight:800;
+      background:linear-gradient(90deg,#a78bfa,#f0abfc,#f472b6);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
       animation:breathe 4s ease-in-out infinite;
     }
-    .logo-pulse::after{
-      content:"";position:absolute;inset:0;z-index:-1;
-      background:radial-gradient(circle,rgba(236,72,153,.25),transparent 70%);
-      filter:blur(12px);transform:scale(1.3);
-      animation:breathe 4s ease-in-out infinite;
+    .logo-pulse::before {
+      content:"";
+      position:absolute;
+      inset:-10px;
+      border-radius:1rem;
+      background:radial-gradient(circle at 50% 50%,rgba(236,72,153,.45),rgba(168,85,247,.45),transparent 70%);
+      filter:blur(20px);
+      z-index:-1;
+      animation:outerGlow 6s ease-in-out infinite;
     }
 
     /* --- Boutons --- */
-    .btn-rose{
+    .btn-rose {
       background-image:linear-gradient(90deg,#d946ef,#ec4899,#9333ea);
       color:#fff;border-radius:.75rem;padding:.75rem 1.5rem;
-      box-shadow:0 0 22px rgba(236,72,153,.3);
-      transition:all .3s ease;
+      box-shadow:0 0 24px rgba(236,72,153,.35);
       animation:breathe 4s ease-in-out infinite;
-      display:inline-block;
+      transition:transform .3s ease,box-shadow .3s ease;
     }
-    .btn-rose:hover{transform:translateY(-2px);box-shadow:0 0 36px rgba(236,72,153,.5)}
+    .btn-rose:hover{transform:translateY(-2px);box-shadow:0 0 40px rgba(236,72,153,.55);}
 
-    /* --- Bouton or ambré --- */
     .btn-or-amber{
       position:relative;display:inline-block;
       padding:.75rem 1.5rem;border-radius:.75rem;
-      background-image:linear-gradient(125deg,#b58e2a 0%,#e6c57a 45%,#c7922e 100%);
-      background-size:200% auto;color:#1a1a1a;font-weight:700;
-      box-shadow:0 0 16px rgba(230,181,80,.25);
-      transition:all .4s ease;
-      animation:breathe 6s ease-in-out infinite;
+      background:linear-gradient(125deg,#b58e2a 0%,#e6c57a 45%,#c7922e 100%);
+      color:#1a1a1a;font-weight:700;
+      box-shadow:0 0 18px rgba(230,181,80,.25);
       overflow:hidden;
+      transition:all .4s ease;
     }
-    .btn-or-amber:hover{transform:translateY(-2px);background-position:right center;box-shadow:0 0 30px rgba(230,181,80,.4);}
-    .btn-or-amber::after{
-      content:"";position:absolute;top:-30%;bottom:-30%;left:-60%;width:50%;
-      background:linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.12),rgba(255,255,255,0));
-      mix-blend-mode:screen;filter:blur(2px);animation:sheen 5s linear infinite;
-    }
+    .btn-or-amber:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(230,181,80,.4);}
 
     /* --- Titres dorés --- */
-    .text-or{
-      background:linear-gradient(to right,#f1dd9a 0%,#e6c57a 25%,#fff2b2 50%,#d9b461 75%,#b5882a 100%);
+    .text-or {
+      background:linear-gradient(to right,#f1dd9a,#e6c57a,#fff2b2,#d9b461,#b5882a);
       -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-      position:relative;display:inline-block;
       animation:breathe 4s ease-in-out infinite;
+      display:inline-block;
     }
 
-    /* --- HALO amélioré autour des cartes prix --- */
-    .price-card{
+    /* --- Cartes prix : halo externe --- */
+    .price-card {
       position:relative;
-      border:1px solid rgba(236,72,153,.25);
-      background:transparent;
+      border:1px solid rgba(236,72,153,.3);
+      background-color:rgba(15,15,25,.5);
       border-radius:1rem;
       overflow:hidden;
     }
-    .price-card::before{
-      content:"";position:absolute;inset:-3px;z-index:0;border-radius:1.2rem;
-      background:radial-gradient(circle at 50% 50%,rgba(236,72,153,.45) 0%,rgba(168,85,247,.4) 40%,rgba(236,72,153,.25) 70%,transparent 90%);
-      filter:blur(25px);
-      animation:pulseHalo 5s ease-in-out infinite;
+    .price-card::after {
+      content:"";
+      position:absolute;
+      inset:-8px;
+      border-radius:1.3rem;
+      background:linear-gradient(135deg,rgba(236,72,153,.5),rgba(168,85,247,.45),rgba(236,72,153,.5));
+      z-index:-1;
+      filter:blur(22px);
+      animation:outerGlow 5s ease-in-out infinite;
     }
-    .price-card>*{position:relative;z-index:1;}
 
-    /* --- Contacts ambre doux --- */
-    .text-amber-soft{color:#e8c27e;text-shadow:0 0 8px rgba(232,194,126,.18);}
-    .border-amber-soft{border-color:rgba(232,194,126,.45);}
+    /* --- Contacts --- */
+    .text-amber-soft { color:#e8c27e;text-shadow:0 0 8px rgba(232,194,126,.15);}
+    .border-amber-soft { border-color:rgba(232,194,126,.45);}
   </style>
 </head>
 
@@ -94,7 +90,7 @@
   <!-- Header -->
   <header class="sticky top-0 z-40 border-b border-slate-800/70 bg-slate-900/70 backdrop-blur">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="/" class="logo-pulse font-extrabold text-lg">Filariane</a>
+      <a href="/" class="logo-pulse text-lg">Filariane</a>
       <nav class="flex gap-6">
         <a href="#tarot" class="text-fuchsia-300 hover:text-fuchsia-400 transition">Tarot</a>
         <a href="#apropos" class="text-fuchsia-300 hover:text-fuchsia-400 transition">À propos</a>
@@ -103,7 +99,7 @@
     </div>
   </header>
 
-  <main id="contenu">
+  <main>
     <!-- Hero -->
     <section class="max-w-6xl mx-auto px-4 pt-14 pb-12 grid md:grid-cols-2 gap-10 items-center">
       <div>
@@ -116,7 +112,7 @@
         </p>
 
         <div class="mt-6 flex justify-center">
-          <img src="/lune1.jpg" alt="Croissant de lune" class="rounded-full shadow-lg border border-slate-700 w-40 h-40 object-cover" />
+          <img src="/lune1.jpg" alt="Croissant de lune" class="rounded-full shadow-lg border border-slate-700 w-40 h-40 object-cover"/>
         </div>
 
         <div class="mt-8 flex flex-wrap gap-4">
@@ -148,17 +144,30 @@
       </div>
     </section>
 
+    <!-- À propos -->
+    <section id="apropos" class="max-w-3xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">À propos</h2>
+      <p class="mt-4 text-slate-300 leading-relaxed">
+        Je suis Ariane.<br><br>
+        Ayant un don, je le mets à votre service en utilisant la numérologie Guématria Hébraïque Kabbalistique et le tarot de Marseille.<br><br>
+        Je vous guide vers une compréhension plus profonde de votre chemin de vie et de ce qui est caché.
+        Ces outils révèlent vos blocages, vos forces, et montrent les vérités.<br><br>
+        Chaque séance est une clé de clarté et de transformation : un vrai éclairage qui vous permet d’avoir une réelle prise de conscience.<br><br>
+        Les séances sont disponibles au téléphone, en visio, en ligne et en Vaucluse (Carpentras, Avignon, Orange) et à mon domicile.
+      </p>
+    </section>
+
     <!-- Contact -->
     <section id="contact" class="max-w-3xl mx-auto px-4 py-16">
       <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">Contact</h2>
       <div class="mt-4 flex flex-wrap gap-3">
-        <a href="mailto:ariana.pcss@proton.me" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60 hover:bg-slate-900/80 transition">
+        <a href="mailto:ariana.pcss@proton.me" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60">
           <span class="text-amber-soft">ariana.pcss@proton.me</span>
         </a>
-        <a href="https://instagram.com/sandra_cnx" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60 hover:bg-slate-900/80 transition">
+        <a href="https://instagram.com/sandra_cnx" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60">
           <span class="text-amber-soft">@sandra_cnx</span>
         </a>
-        <a href="tel:+33782580716" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60 hover:bg-slate-900/80 transition">
+        <a href="tel:+33782580716" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60">
           <span class="text-amber-soft">07 82 58 07 16</span>
         </a>
       </div>
@@ -166,13 +175,13 @@
       <form class="mt-6 p-6 rounded-2xl border border-fuchsia-500/40 bg-slate-900/60 shadow"
             action="mailto:ariana.pcss@proton.me" method="post" enctype="text/plain">
         <label class="block text-sm">Votre nom
-          <input class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100 placeholder-slate-400" type="text" name="Nom" placeholder="Votre nom" required>
+          <input class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100 placeholder-slate-400" type="text" name="Nom" required>
         </label>
         <label class="block text-sm mt-4">Votre email
-          <input class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100 placeholder-slate-400" type="email" name="Email" placeholder="email@exemple.com" required>
+          <input class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100 placeholder-slate-400" type="email" name="Email" required>
         </label>
         <label class="block text-sm mt-4">Message
-          <textarea class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100 placeholder-slate-400" name="Message" rows="4" placeholder="Votre message..." required></textarea>
+          <textarea class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100" name="Message" rows="4" required></textarea>
         </label>
         <button class="mt-5 px-5 py-3 btn-rose" type="submit">Envoyer</button>
       </form>
@@ -185,7 +194,6 @@
       <p class="text-fuchsia-200">Consultations en ligne et à Carpentras</p>
     </div>
   </footer>
-
   <script>document.getElementById('annee').textContent=new Date().getFullYear();</script>
 </body>
 </html>
