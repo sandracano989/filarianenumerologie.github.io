@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Filariane — Tarot de Marseille & Numérologie Guématria sur Carpentras et Avignon </title>
+  <title>Filariane — Tarot de Marseille & Numérologie Guématria sur Carpentras et Avignon</title>
   <meta name="description" content="Guidance par le tarot de Marseille & la numérologie Guématria. Séances en ligne ou chez moi sur Avignon. Réservez votre tirage." />
   <meta name="google-site-verification" content="GIeWonZ61Q5VMFWauHFGqFA8onthwRFR1zbyY8Qr8zk" />
   <meta property="og:title" content="Filariane — Tarot & numérologie" />
@@ -11,7 +11,37 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://filarianenumerologie.com/" />
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Effet doré scintillant */
+    .btn-or {
+      background-image: linear-gradient(135deg, #f6e27a, #e5c963, #f0d97a, #d4b940);
+      background-size: 200% auto;
+      transition: all 0.4s ease-in-out;
+      color: #1a1a1a;
+      font-weight: 600;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+    .btn-or:hover {
+      background-position: right center;
+      transform: translateY(-1px);
+      box-shadow: 0 0 25px rgba(255, 230, 120, 0.6);
+    }
+
+    /* Texte doré */
+    .text-or {
+      background: linear-gradient(to right, #f8e58c, #f3cc55, #f6e27a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Bordure dorée douce */
+    .border-or {
+      border-color: rgba(250, 215, 90, 0.4);
+    }
+  </style>
 </head>
+
 <body class="antialiased bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100">
 
   <!-- Header -->
@@ -21,50 +51,48 @@
         Filariane
       </a>
       <nav class="flex gap-6 text-slate-200">
-        <a href="#tarot" class="hover:text-pink-300 transition">Tarot</a>
-        <a href="#apropos" class="hover:text-pink-300 transition">À propos</a>
-        <a href="#contact" class="hover:text-pink-300 transition">Contact</a>
+        <a href="#tarot" class="hover:text-yellow-400 transition">Tarot</a>
+        <a href="#apropos" class="hover:text-yellow-400 transition">À propos</a>
+        <a href="#contact" class="hover:text-yellow-400 transition">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="contenu">
 
-    <!-- Hero -->
-    <div class="mt-2 flex flex-wrap gap-3">
-  <a href="/avignon.html" class="text-fuchsia-300 hover:underline">Tarot Avignon</a>
-  <span class="text-slate-500">•</span>
-  <a href="/carpentras.html" class="text-fuchsia-300 hover:underline">Numérologie Carpentras</a>
-  <span class="text-slate-500">•</span>
-  <a href="/en-ligne.html" class="text-fuchsia-300 hover:underline">Consultations en ligne</a>
-</div>
+    <!-- Liens secondaires -->
+    <div class="mt-2 flex flex-wrap gap-3 justify-center text-sm">
+      <a href="/avignon.html" class="text-yellow-300 hover:underline">Tarot Avignon</a>
+      <span class="text-slate-500">•</span>
+      <a href="/carpentras.html" class="text-yellow-300 hover:underline">Numérologie Carpentras</a>
+      <span class="text-slate-500">•</span>
+      <a href="/en-ligne.html" class="text-yellow-300 hover:underline">Consultations en ligne</a>
+    </div>
 
+    <!-- Hero -->
     <section class="max-w-6xl mx-auto px-4 pt-14 pb-12 grid md:grid-cols-2 gap-10 items-center">
       <div>
         <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400">
             Filariane
           </span><br/>
-          <span class="text-pink-300">Numérologie & Tarot</span>
+          <span class="text-or">Numérologie & Tarot</span>
         </h1>
         <p class="mt-4 text-lg text-slate-300">
           Consultations de numérologie, guidance et tirages de tarot pour éclairer votre chemin de vie — en ligne ou chez moi sur Avignon/Carpentras.
         </p>
-        <div class="mt-6 flex justify-center">
-<div class="mt-6 flex justify-center">
-  <img src="/lune1.jpg"
-       alt="Croissant de lune"
-       class="rounded-full shadow-lg border border-slate-700 w-40 h-40 object-cover" />
-</div>
 
-</div>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#tarifs"
-             class="px-6 py-3 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 text-white hover:from-pink-700 hover:to-purple-700 shadow transition">
+        <div class="mt-6 flex justify-center">
+          <img src="/lune1.jpg"
+               alt="Croissant de lune"
+               class="rounded-full shadow-lg border border-slate-700 w-40 h-40 object-cover" />
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#tarifs" class="px-6 py-3 rounded-xl btn-or">
             Voir les tarifs
           </a>
-          <a href="#contact"
-             class="px-6 py-3 rounded-xl border border-pink-500/50 text-pink-300 hover:bg-pink-500/10 transition">
+          <a href="#contact" class="px-6 py-3 rounded-xl border border-or text-yellow-300 hover:bg-yellow-500/10 transition">
             Me contacter
           </a>
         </div>
@@ -73,79 +101,57 @@
 
     <!-- Tarifs -->
     <section id="tarifs" class="max-w-6xl mx-auto px-4 py-16">
-      <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">Tarifs</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-or">Tarifs</h2>
       <div class="mt-6 grid md:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 shadow-lg">
-          <h3 class="text-xl font-semibold">Tirage simple</h3>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-or shadow-lg">
+          <h3 class="text-xl font-semibold text-yellow-300">Tirage simple</h3>
           <p class="mt-2 text-slate-300">Question précise, tirage ciblé.</p>
-          <p class="mt-5 text-4xl font-extrabold text-pink-400">25 €</p>
+          <p class="mt-5 text-4xl font-extrabold text-yellow-400">25 €</p>
         </div>
-        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 shadow-lg ring-2 ring-fuchsia-500/30">
-          <h3 class="text-xl font-semibold">Numérologie + tirage</h3>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-or shadow-lg ring-2 ring-yellow-400/40">
+          <h3 class="text-xl font-semibold text-yellow-300">Numérologie + tirage</h3>
           <p class="mt-2 text-slate-300">Vue d’ensemble + guidance sur vos choix.</p>
-          <p class="mt-5 text-4xl font-extrabold text-fuchsia-400">35 €</p>
+          <p class="mt-5 text-4xl font-extrabold text-yellow-400">35 €</p>
         </div>
-        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 shadow-lg">
-          <h3 class="text-xl font-semibold">Guidance & suivi</h3>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-or shadow-lg">
+          <h3 class="text-xl font-semibold text-yellow-300">Guidance & suivi</h3>
           <p class="mt-2 text-slate-300">Approfondissement + suivi personnalisé.</p>
-          <p class="mt-5 text-4xl font-extrabold text-purple-400">45 €</p>
+          <p class="mt-5 text-4xl font-extrabold text-yellow-400">45 €</p>
         </div>
       </div>
     </section>
 
     <!-- À propos -->
     <section id="apropos" class="max-w-3xl mx-auto px-4 py-16">
-      <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">À propos</h2>
-      <p class="mt-4 text-slate-300">
-       Je suis Ariane.
-        
-Ayant un don, je le met à votre service en utilisant la numérologie Guématria Hébraïque Kabbalistique et le tarot de Marseille.
-        
-Je vous guide vers une compréhension plus profonde de votre chemin de vie, et de ce qui est caché.
-
-Ces outils révèlent vos blocages, vos forces, et montreront les vérités.
-        
-Chaque séance est une clé de clarté et de transformation : un vrai éclairage qui vous permet d'avoir une réelle prise de conscience.
-
-Les séances sont disponibles au téléphone, en visio, en ligne et en Vaucluse (Carpentras, Avignon, Orange) et à mon domicile.
-        
-📩 Contact par mail, Instagram ou téléphone.
-
+      <h2 class="text-2xl md:text-3xl font-bold text-or">À propos</h2>
+      <p class="mt-4 text-slate-300 leading-relaxed">
+        Je suis Ariane.<br><br>
+        Ayant un don, je le mets à votre service en utilisant la numérologie Guématria Hébraïque Kabbalistique et le tarot de Marseille.<br><br>
+        Je vous guide vers une compréhension plus profonde de votre chemin de vie et de ce qui est caché.
+        Ces outils révèlent vos blocages, vos forces, et montrent les vérités.<br><br>
+        Chaque séance est une clé de clarté et de transformation : un vrai éclairage qui vous permet d’avoir une réelle prise de conscience.<br><br>
+        Les séances sont disponibles au téléphone, en visio, en ligne et en Vaucluse (Carpentras, Avignon, Orange) et à mon domicile.
       </p>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="max-w-3xl mx-auto px-4 py-16">
-      <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">Contact</h2>
+      <h2 class="text-2xl md:text-3xl font-bold text-or">Contact</h2>
 
-      <!-- Boutons de contact -->
       <div class="mt-4 flex flex-wrap gap-3">
-        <!-- Email -->
-        <a href="mailto:ariana.pcss@proton.me"
-           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-pink-500/40 bg-slate-900/60 text-pink-300 hover:bg-pink-500/10 transition">
+        <a href="mailto:ariana.pcss@proton.me" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-or bg-slate-900/60 text-yellow-300 hover:bg-yellow-500/10 transition">
           📧 ariana.pcss@proton.me
         </a>
-
-        <!-- Instagram -->
-        <a href="https://instagram.com/sandra_cnx" target="_blank"
-           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-fuchsia-500/40 bg-slate-900/60 text-fuchsia-300 hover:bg-fuchsia-500/10 transition">
-          <!-- Logo Instagram officiel (SVG) -->
-          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512" class="w-4 h-4">
-            <path d="M224,202.66A53.34,53.34,0,1,0,277.34,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.52-30.52c-21.1-8.41-71.1-6.51-94.19-6.51s-73.09-1.9-94.19,6.51a54,54,0,0,0-30.52,30.52c-8.41,21.1-6.51,71.1-6.51,94.19s-1.9,73.09,6.51,94.19a54,54,0,0,0,30.52,30.52c21.1,8.41,71.1,6.51,94.19,6.51s73.09,1.9,94.19-6.51a54,54,0,0,0,30.52-30.52c8.41-21.1,6.51-71.1,6.51-94.19S357.12,182.78,348.71,161.68ZM224,338A82,82,0,1,1,306,256,82.09,82.09,0,0,1,224,338Zm85.34-148.91a19.14,19.14,0,1,1,19.14-19.14A19.16,19.16,0,0,1,309.34,189.09Z"/>
-          </svg>
-          @sandra_cnx
+        <a href="https://instagram.com/sandra_cnx" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-or bg-slate-900/60 text-yellow-300 hover:bg-yellow-500/10 transition">
+          📸 @sandra_cnx
+        </a>
+        <a href="tel:+33782580716" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-or bg-slate-900/60 text-yellow-300 hover:bg-yellow-500/10 transition">
+          📞 07 82 58 07 16
         </a>
       </div>
 
-       <!-- Téléphone -->
-  <a href="tel:+33782580716"
-     class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-purple-500/40 bg-slate-900/60 text-purple-300 hover:bg-purple-500/10 transition">
-    📞 07 82 58 07 16
-  </a>
-</div>
-
       <!-- Formulaire -->
-      <form class="mt-6 p-6 rounded-2xl border border-slate-700 bg-slate-900/60 shadow"
+      <form class="mt-6 p-6 rounded-2xl border border-or bg-slate-900/60 shadow"
             action="mailto:ariana.pcss@proton.me" method="post" enctype="text/plain">
         <label class="block text-sm">Votre nom
           <input class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100 placeholder-slate-400" type="text" name="Nom" placeholder="Votre nom" required>
@@ -156,9 +162,8 @@ Les séances sont disponibles au téléphone, en visio, en ligne et en Vaucluse 
         <label class="block text-sm mt-4">Message
           <textarea class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100 placeholder-slate-400" name="Message" rows="4" placeholder="Votre message..." required></textarea>
         </label>
-        <button class="mt-5 px-5 py-3 rounded-xl text-white bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 transition shadow"
-                type="submit">
-          Envoyer
+        <button class="mt-5 px-5 py-3 rounded-xl btn-or" type="submit">
+          ✨ Envoyer
         </button>
       </form>
     </section>
@@ -168,14 +173,12 @@ Les séances sont disponibles au téléphone, en visio, en ligne et en Vaucluse 
   <footer class="border-t border-slate-800/70">
     <div class="max-w-6xl mx-auto px-4 py-8 text-sm text-slate-400 flex items-center justify-between">
       <p>© <span id="annee"></span> Filariane. Tous droits réservés.</p>
+      <p class="text-yellow-300">Consultations en ligne et à Carpentras</p>
     </div>
-  </footer><a href="/avignon.html" class="text-pink-300 hover:underline">Tarot à Avignon</a>
-
+  </footer>
 
   <script>
     document.getElementById('annee').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
-<p class="text-sm text-slate-400">Consultations en ligne et à Carpentras</p>
