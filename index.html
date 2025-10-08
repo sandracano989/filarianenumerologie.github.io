@@ -39,14 +39,32 @@
     .btn-or-amber{
       position:relative;display:inline-block;padding:.75rem 1.5rem;border-radius:.75rem;
       background:linear-gradient(125deg,#b58e2a 0%,#e6c57a 45%,#c7922e 100%);
-      color:#1a1a1a;font-weight:700;box-shadow:0 0 18px rgba(230,181,80,.25);
-      overflow:hidden;transition:all .4s ease;animation:breathe 6s ease-in-out infinite;
+      color:#1a1a1a;font-weight:700;
+      box-shadow:0 0 18px rgba(230,181,80,.25);
+      overflow:hidden;transition:all .4s ease;
     }
     .btn-or-amber:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(230,181,80,.4);}
     .btn-or-amber::after{
       content:"";position:absolute;top:-30%;bottom:-30%;left:-60%;width:50%;
       background:linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.12),rgba(255,255,255,0));
       mix-blend-mode:screen;filter:blur(2px);animation:sheen 5s linear infinite;
+    }
+
+    /* Pulsation dorée douce */
+    @keyframes amberPulse {
+      0%, 100% {
+        box-shadow: 0 0 14px rgba(230,181,80,0.35),
+                    0 0 24px rgba(230,181,80,0.2) inset;
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 28px rgba(230,181,80,0.55),
+                    0 0 35px rgba(230,181,80,0.25) inset;
+        transform: scale(1.03);
+      }
+    }
+    .btn-or-amber.pulse {
+      animation: amberPulse 4s ease-in-out infinite;
     }
 
     /* ===== Titre doré ===== */
@@ -69,12 +87,10 @@
     }
     .price-card{
       position:relative; z-index:1;
-      /* AUCUN fond : même fond que la page */
       background: transparent;
-      /* AUCUNE vraie bordure, on laisse le halo faire l'encadrement */
       border: 1px solid transparent;
       border-radius:1rem; overflow:hidden;
-      padding:1.5rem; /* équiv. p-6 */
+      padding:1.5rem;
     }
 
     /* ===== Contacts ambre doux ===== */
@@ -99,7 +115,7 @@
 
   <main id="contenu">
 
-    <!-- Liens secondaires (tes autres pages remises) -->
+    <!-- Liens secondaires -->
     <div class="mt-2 flex flex-wrap gap-3 justify-center text-sm">
       <a href="/avignon.html" class="text-fuchsia-300 hover:underline">Tarot Avignon</a>
       <span class="text-slate-500">•</span>
@@ -130,7 +146,7 @@
       </div>
     </section>
 
-    <!-- Tarifs (fond des cartes = comme la page, halo externe) -->
+    <!-- Tarifs -->
     <section id="tarifs" class="max-w-6xl mx-auto px-4 py-16">
       <h2 class="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-fuchsia-400 to-purple-400">Tarifs</h2>
 
@@ -170,7 +186,7 @@
       </div>
     </section>
 
-    <!-- À propos (ta présentation) -->
+    <!-- À propos -->
     <section id="apropos" class="max-w-3xl mx-auto px-4 py-16">
       <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">À propos</h2>
       <p class="mt-4 text-slate-300 leading-relaxed">
@@ -186,7 +202,14 @@
     <!-- Contact -->
     <section id="contact" class="max-w-3xl mx-auto px-4 py-16">
       <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">Contact</h2>
-      <div class="mt-4 flex flex-wrap gap-3">
+
+      <!-- Bouton de contact pulsant -->
+      <div class="mt-5">
+        <a href="#contact" class="btn-or-amber pulse">💫 Contact</a>
+      </div>
+
+      <!-- Liens -->
+      <div class="mt-6 flex flex-wrap gap-3">
         <a href="mailto:ariana.pcss@proton.me" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60 hover:bg-slate-900/80 transition">
           <span class="text-amber-soft">ariana.pcss@proton.me</span>
         </a>
@@ -198,6 +221,7 @@
         </a>
       </div>
 
+      <!-- Formulaire -->
       <form class="mt-6 p-6 rounded-2xl border border-fuchsia-500/40 bg-slate-900/60 shadow"
             action="mailto:ariana.pcss@proton.me" method="post" enctype="text/plain">
         <label class="block text-sm">Votre nom
