@@ -5,108 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Filariane — Tarot de Marseille & Numérologie Guématria sur Carpentras et Avignon</title>
   <meta name="description" content="Guidance par le tarot de Marseille & la numérologie Guématria. Séances en ligne ou chez moi sur Avignon. Réservez votre tirage." />
-  <meta name="google-site-verification" content="GIeWonZ61Q5VMFWauHFGqFA8onthwRFR1zbyY8Qr8zk" />
-  <meta property="og:title" content="Filariane — Tarot & numérologie" />
-  <meta property="og:description" content="Guidance, numérologie & tarot. Réservez votre séance." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://filarianenumerologie.com/" />
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     /* --- OR MÉTALLIQUE --- */
     .btn-or {
-      background-image: linear-gradient(
-        125deg,
-        #b8860b 0%,
-        #ffd700 30%,
-        #fdf5b2 50%,
-        #ffcc00 70%,
-        #b8860b 100%
-      );
-      background-size: 300% auto;
-      transition: all 0.5s ease-in-out;
-      color: #1a1a1a;
-      font-weight: 600;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.35);
+      background-image: linear-gradient(125deg,#b8860b 0%,#ffd700 30%,#fdf5b2 50%,#ffcc00 70%,#b8860b 100%);
+      background-size: 300% auto; transition: all .5s ease-in-out;
+      color:#1a1a1a; font-weight:600; box-shadow:0 0 20px rgba(255,215,0,.35);
     }
-    .btn-or:hover {
-      background-position: right center;
-      transform: translateY(-1px);
-      box-shadow: 0 0 35px rgba(255, 215, 0, 0.55);
-    }
+    .btn-or:hover { background-position:right center; transform:translateY(-1px); box-shadow:0 0 35px rgba(255,215,0,.55); }
 
-    /* --- Texte doré réaliste + halo --- */
+    /* Texte doré + halo pulsant régulier */
     .text-or {
-      background: linear-gradient(
-        to right,
-        #f5e19c 0%,
-        #ffd700 25%,
-        #fff2b2 50%,
-        #e3c565 75%,
-        #b8860b 100%
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      position: relative;
-      display: inline-block;
+      background: linear-gradient(to right,#f5e19c 0%,#ffd700 25%,#fff2b2 50%,#e3c565 75%,#b8860b 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      position:relative; display:inline-block;
+    }
+    .text-or::after{
+      content:""; position:absolute; inset:0; z-index:-1;
+      background: radial-gradient(circle, rgba(255,215,0,.35) 0%, transparent 70%);
+      filter: blur(12px); transform: scale(1.3);
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+    @keyframes pulseGlow{
+      0%,100%{opacity:.7; transform:scale(1.3);}
+      50%{opacity:1; transform:scale(1.45);}
     }
 
-    /* Halo doré pulsant */
-    .text-or::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background: radial-gradient(circle, rgba(255,215,0,0.35) 0%, transparent 70%);
-      filter: blur(12px);
-      transform: scale(1.3);
-      animation: pulseGlow 6s ease-in-out infinite;
+    /* Doré sans halo (contacts) */
+    .gold-text{
+      background: linear-gradient(to right,#f5e19c,#ffd700,#e3c565,#b8860b);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
     }
 
-    /* --- Halo signature (logo du menu) --- */
-    .logo-halo {
-      position: relative;
-      display: inline-block;
+    /* Glow violet/rose autour des cartes de prix */
+    .tarif-card{
+      position:relative;
+      box-shadow:0 0 20px rgba(236,72,153,0.15),0 0 40px rgba(168,85,247,0.1);
+      transition:box-shadow .4s ease;
     }
-    .logo-halo::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background: radial-gradient(circle, rgba(255,215,0,0.25) 0%, transparent 70%);
-      filter: blur(8px);
-      transform: scale(1.4);
-      animation: pulseGlow 8s ease-in-out infinite;
+    .tarif-card:hover{
+      box-shadow:0 0 35px rgba(236,72,153,0.35),0 0 60px rgba(168,85,247,0.25);
     }
 
-    /* --- Animation douce du halo --- */
-    @keyframes pulseGlow {
-      0%, 100% {
-        opacity: 0.6;
-        transform: scale(1.3);
-        filter: blur(12px);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1.5);
-        filter: blur(18px);
-      }
+    /* Bouton "Me contacter" avec pulsation douce */
+    .btn-contact{
+      background-image: linear-gradient(to right,#d946ef,#ec4899,#9333ea);
+      color:#fff; border-radius:0.75rem;
+      box-shadow:0 0 25px rgba(236,72,153,0.3);
+      transition: transform .3s ease, box-shadow .5s ease;
+      animation: pulseContact 5s ease-in-out infinite;
     }
-
-    /* Bordure dorée profonde */
-    .border-or {
-      border-color: rgba(255, 215, 0, 0.5);
+    .btn-contact:hover{
+      transform:translateY(-2px);
+      box-shadow:0 0 40px rgba(236,72,153,0.6);
+    }
+    @keyframes pulseContact{
+      0%,100%{box-shadow:0 0 25px rgba(236,72,153,0.3);}
+      50%{box-shadow:0 0 45px rgba(236,72,153,0.55);}
     }
   </style>
 </head>
 
-<body class="antialiased bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100">
+<body class="antialiased bg-gradient-to-br from-black via-[#05040a] to-black text-slate-100">
 
   <!-- Header -->
   <header class="sticky top-0 z-40 border-b border-slate-800/70 bg-slate-900/70 backdrop-blur">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <!-- Logo avec halo doré -->
-      <a href="/" class="logo-halo font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 text-lg">
+      <a href="/" class="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 text-lg">
         Filariane
       </a>
       <nav class="flex gap-6">
@@ -118,16 +85,6 @@
   </header>
 
   <main id="contenu">
-
-    <!-- Liens secondaires -->
-    <div class="mt-2 flex flex-wrap gap-3 justify-center text-sm">
-      <a href="/avignon.html" class="text-fuchsia-300 hover:underline">Tarot Avignon</a>
-      <span class="text-slate-500">•</span>
-      <a href="/carpentras.html" class="text-fuchsia-300 hover:underline">Numérologie Carpentras</a>
-      <span class="text-slate-500">•</span>
-      <a href="/en-ligne.html" class="text-fuchsia-300 hover:underline">Consultations en ligne</a>
-    </div>
-
     <!-- Hero -->
     <section class="max-w-6xl mx-auto px-4 pt-14 pb-12 grid md:grid-cols-2 gap-10 items-center">
       <div>
@@ -142,18 +99,13 @@
         </p>
 
         <div class="mt-6 flex justify-center">
-          <img src="/lune1.jpg"
-               alt="Croissant de lune"
+          <img src="/lune1.jpg" alt="Croissant de lune"
                class="rounded-full shadow-lg border border-slate-700 w-40 h-40 object-cover" />
         </div>
 
         <div class="mt-8 flex flex-wrap gap-4">
-          <a href="#tarifs" class="px-6 py-3 rounded-xl btn-or">
-            ✨ Voir les tarifs
-          </a>
-          <a href="#contact" class="px-6 py-3 rounded-xl border border-or text-fuchsia-200 hover:bg-fuchsia-500/10 transition">
-            Me contacter
-          </a>
+          <a href="#tarifs" class="px-6 py-3 rounded-xl btn-or">✨ Voir les tarifs</a>
+          <a href="#contact" class="px-6 py-3 btn-contact">💌 Me contacter</a>
         </div>
       </div>
     </section>
@@ -162,17 +114,17 @@
     <section id="tarifs" class="max-w-6xl mx-auto px-4 py-16">
       <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">Tarifs</h2>
       <div class="mt-6 grid md:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 shadow-lg relative overflow-hidden">
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 tarif-card">
           <h3 class="text-xl font-semibold text-or">Tirage simple</h3>
           <p class="mt-2 text-slate-300">Question précise, tirage ciblé.</p>
           <p class="mt-5 text-4xl font-extrabold text-pink-400">25 €</p>
         </div>
-        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 shadow-lg ring-2 ring-fuchsia-500/30 relative overflow-hidden">
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 tarif-card">
           <h3 class="text-xl font-semibold text-or">Numérologie + tirage</h3>
           <p class="mt-2 text-slate-300">Vue d’ensemble + guidance sur vos choix.</p>
           <p class="mt-5 text-4xl font-extrabold text-fuchsia-400">35 €</p>
         </div>
-        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 shadow-lg relative overflow-hidden">
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 tarif-card">
           <h3 class="text-xl font-semibold text-or">Guidance & suivi</h3>
           <p class="mt-2 text-slate-300">Approfondissement + suivi personnalisé.</p>
           <p class="mt-5 text-4xl font-extrabold text-purple-400">45 €</p>
@@ -180,37 +132,24 @@
       </div>
     </section>
 
-    <!-- À propos -->
-    <section id="apropos" class="max-w-3xl mx-auto px-4 py-16">
-      <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">À propos</h2>
-      <p class="mt-4 text-slate-300 leading-relaxed">
-        Je suis Ariane.<br><br>
-        Ayant un don, je le mets à votre service en utilisant la numérologie Guématria Hébraïque Kabbalistique et le tarot de Marseille.<br><br>
-        Je vous guide vers une compréhension plus profonde de votre chemin de vie et de ce qui est caché.
-        Ces outils révèlent vos blocages, vos forces, et montrent les vérités.<br><br>
-        Chaque séance est une clé de clarté et de transformation : un vrai éclairage qui vous permet d’avoir une réelle prise de conscience.<br><br>
-        Les séances sont disponibles au téléphone, en visio, en ligne et en Vaucluse (Carpentras, Avignon, Orange) et à mon domicile.
-      </p>
-    </section>
-
     <!-- Contact -->
     <section id="contact" class="max-w-3xl mx-auto px-4 py-16">
       <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">Contact</h2>
 
       <div class="mt-4 flex flex-wrap gap-3">
-        <a href="mailto:ariana.pcss@proton.me" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-or bg-slate-900/60 text-fuchsia-200 hover:bg-fuchsia-500/10 transition">
-          📧 ariana.pcss@proton.me
+        <a href="mailto:ariana.pcss@proton.me" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[#ffd70080] bg-slate-900/60 hover:bg-slate-900/80 transition">
+          <span class="gold-text">📧 ariana.pcss@proton.me</span>
         </a>
-        <a href="https://instagram.com/sandra_cnx" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-or bg-slate-900/60 text-fuchsia-200 hover:bg-fuchsia-500/10 transition">
-          📸 @sandra_cnx
+        <a href="https://instagram.com/sandra_cnx" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[#ffd70080] bg-slate-900/60 hover:bg-slate-900/80 transition">
+          <span class="gold-text">📸 @sandra_cnx</span>
         </a>
-        <a href="tel:+33782580716" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-or bg-slate-900/60 text-fuchsia-200 hover:bg-fuchsia-500/10 transition">
-          📞 07 82 58 07 16
+        <a href="tel:+33782580716" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[#ffd70080] bg-slate-900/60 hover:bg-slate-900/80 transition">
+          <span class="gold-text">📞 07 82 58 07 16</span>
         </a>
       </div>
 
       <!-- Formulaire -->
-      <form class="mt-6 p-6 rounded-2xl border border-or bg-slate-900/60 shadow"
+      <form class="mt-6 p-6 rounded-2xl border border-fuchsia-500/40 bg-slate-900/60 shadow"
             action="mailto:ariana.pcss@proton.me" method="post" enctype="text/plain">
         <label class="block text-sm">Votre nom
           <input class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100 placeholder-slate-400" type="text" name="Nom" placeholder="Votre nom" required>
@@ -221,8 +160,8 @@
         <label class="block text-sm mt-4">Message
           <textarea class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100 placeholder-slate-400" name="Message" rows="4" placeholder="Votre message..." required></textarea>
         </label>
-        <button class="mt-5 px-5 py-3 rounded-xl btn-or" type="submit">
-          ✨ Envoyer
+        <button class="mt-5 px-5 py-3 rounded-xl bg-gradient-to-r from-fuchsia-600 via-pink-500 to-purple-600 text-white hover:from-fuchsia-700 hover:to-purple-700 transition shadow-lg hover:shadow-pink-500/30" type="submit">
+          ✉️ Envoyer
         </button>
       </form>
     </section>
@@ -241,5 +180,6 @@
   </script>
 </body>
 </html>
+
 
 
