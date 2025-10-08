@@ -35,7 +35,7 @@
       box-shadow: 0 0 35px rgba(255, 215, 0, 0.55);
     }
 
-    /* Texte doré réaliste */
+    /* --- Texte doré réaliste + halo --- */
     .text-or {
       background: linear-gradient(
         to right,
@@ -47,32 +47,72 @@
       );
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Halo doré pulsant */
+    .text-or::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(circle, rgba(255,215,0,0.35) 0%, transparent 70%);
+      filter: blur(12px);
+      transform: scale(1.3);
+      animation: pulseGlow 6s ease-in-out infinite;
+    }
+
+    /* --- Halo signature (logo du menu) --- */
+    .logo-halo {
+      position: relative;
+      display: inline-block;
+    }
+    .logo-halo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(circle, rgba(255,215,0,0.25) 0%, transparent 70%);
+      filter: blur(8px);
+      transform: scale(1.4);
+      animation: pulseGlow 8s ease-in-out infinite;
+    }
+
+    /* --- Animation douce du halo --- */
+    @keyframes pulseGlow {
+      0%, 100% {
+        opacity: 0.6;
+        transform: scale(1.3);
+        filter: blur(12px);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.5);
+        filter: blur(18px);
+      }
     }
 
     /* Bordure dorée profonde */
     .border-or {
       border-color: rgba(255, 215, 0, 0.5);
     }
-
-    /* Fond mystique violet profond */
-    body {
-      background: linear-gradient(135deg, #0a0216 0%, #1b0b33 40%, #0e0321 100%);
-    }
   </style>
 </head>
 
-<body class="antialiased text-slate-100">
+<body class="antialiased bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100">
 
   <!-- Header -->
   <header class="sticky top-0 z-40 border-b border-slate-800/70 bg-slate-900/70 backdrop-blur">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="/" class="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 text-lg">
+      <!-- Logo avec halo doré -->
+      <a href="/" class="logo-halo font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 text-lg">
         Filariane
       </a>
-      <nav class="flex gap-6 text-slate-200">
-        <a href="#tarot" class="hover:text-fuchsia-300 transition">Tarot</a>
-        <a href="#apropos" class="hover:text-fuchsia-300 transition">À propos</a>
-        <a href="#contact" class="hover:text-fuchsia-300 transition">Contact</a>
+      <nav class="flex gap-6">
+        <a href="#tarot" class="text-fuchsia-300 hover:text-fuchsia-400 transition">Tarot</a>
+        <a href="#apropos" class="text-fuchsia-300 hover:text-fuchsia-400 transition">À propos</a>
+        <a href="#contact" class="text-fuchsia-300 hover:text-fuchsia-400 transition">Contact</a>
       </nav>
     </div>
   </header>
@@ -122,18 +162,18 @@
     <section id="tarifs" class="max-w-6xl mx-auto px-4 py-16">
       <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">Tarifs</h2>
       <div class="mt-6 grid md:grid-cols-3 gap-6">
-        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 shadow-lg">
-          <h3 class="text-xl font-semibold text-fuchsia-300">Tirage simple</h3>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 shadow-lg relative overflow-hidden">
+          <h3 class="text-xl font-semibold text-or">Tirage simple</h3>
           <p class="mt-2 text-slate-300">Question précise, tirage ciblé.</p>
           <p class="mt-5 text-4xl font-extrabold text-pink-400">25 €</p>
         </div>
-        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 shadow-lg ring-2 ring-fuchsia-500/30">
-          <h3 class="text-xl font-semibold text-fuchsia-300">Numérologie + tirage</h3>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 shadow-lg ring-2 ring-fuchsia-500/30 relative overflow-hidden">
+          <h3 class="text-xl font-semibold text-or">Numérologie + tirage</h3>
           <p class="mt-2 text-slate-300">Vue d’ensemble + guidance sur vos choix.</p>
           <p class="mt-5 text-4xl font-extrabold text-fuchsia-400">35 €</p>
         </div>
-        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 shadow-lg">
-          <h3 class="text-xl font-semibold text-fuchsia-300">Guidance & suivi</h3>
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-700 shadow-lg relative overflow-hidden">
+          <h3 class="text-xl font-semibold text-or">Guidance & suivi</h3>
           <p class="mt-2 text-slate-300">Approfondissement + suivi personnalisé.</p>
           <p class="mt-5 text-4xl font-extrabold text-purple-400">45 €</p>
         </div>
@@ -201,4 +241,5 @@
   </script>
 </body>
 </html>
+
 
