@@ -379,3 +379,48 @@
   </script>
 </body>
 </html>
+<script>
+(function () {
+  // Le HTML voulu pour le titre (2 lignes)
+  const NEW_TITLE_HTML = `
+    <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400">
+      Filariane
+    </span><br/>
+    <span class="text-or">Numérologie Guématria & Astrologie — Voyance pure</span><br/>
+    <span class="text-or">Tarot de Marseille & Rituels sacrés</span>
+  `;
+
+  // 1) Trouve le H1 existant (le 1er h1 de la page)
+  function findTitle() {
+    // Priorité à un h1 avec “Filariane” dedans, sinon le premier h1
+    const allH1 = Array.from(document.getElementsByTagName('h1'));
+    return allH1.find(el => /filariane/i.test(el.textContent)) || allH1[0] || null;
+  }
+
+  // 2) Remplace son contenu si besoin
+  function applyTitle() {
+    const h1 = findTitle();
+    if (!h1) return;
+    // Évite de réécrire en boucle si déjà bon
+    if (h1.dataset.__titlePatched === '1') return;
+    h1.innerHTML = NEW_TITLE_HTML;
+    h1.dataset.__titlePatched = '1';
+    // Optionnel : s’assure que la classe de style est bien là
+    if (!h1.className.includes('font-extrabold')) {
+      h1.className = 'text-4xl md:text-5xl font-extrabold leading-tight';
+    }
+  }
+
+  // 3) Applique au chargement
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyTitle);
+  } else {
+    applyTitle();
+  }
+
+  // 4) Si le CMS réinjecte l’ancien titre après coup, on le remet (MutationObserver)
+  const observer = new MutationObserver(() => applyTitle());
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+
+})();
+</script>
