@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Filariane — Numérologie Guématria, Astrologie, Voyance pure, Tarot de Marseille & Rituels sacrés</title>
-  <meta name="description" content="Numérologie Guématria, astrologie, voyance pure, tarot de Marseille et rituels sacrés. Consultations en ligne, téléphone ou à Avignon / Carpentras." />
+  <title>Filariane — Numérologie Gématria, Astrologie, Voyance pure, Tarot de Marseille & Rituels sacrés</title>
+  <meta name="description" content="Numérologie Gématria, astrologie, voyance pure, tarot de Marseille et rituels sacrés. Consultations en ligne, téléphone ou à Avignon / Carpentras." />
   <link rel="canonical" href="https://filarianenumerologie.com/" />
   <meta name="robots" content="index,follow" />
   <meta property="og:title" content="Filariane — Numérologie, Astrologie, Voyance, Tarot & Rituels" />
-  <meta property="og:description" content="Guidance par numérologie Guématria, astrologie, voyance pure, tarot et rituels sacrés. En ligne ou à Avignon/Carpentras." />
+  <meta property="og:description" content="Guidance par numérologie Gématria, astrologie, voyance pure, tarot et rituels sacrés. En ligne ou à Avignon/Carpentras." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://filarianenumerologie.com/" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -21,6 +21,11 @@
     @keyframes amberPulse {
       0%, 100% { box-shadow: 0 0 14px rgba(230,181,80,0.35), 0 0 24px rgba(230,181,80,0.2) inset; transform: scale(1); }
       50%      { box-shadow: 0 0 28px rgba(230,181,80,0.55), 0 0 35px rgba(230,181,80,0.25) inset; transform: scale(1.03); }
+    }
+    @keyframes ringPulse {
+      0%   { transform: scale(1); opacity: .45; }
+      70%  { transform: scale(1.6); opacity: 0; }
+      100% { transform: scale(1.6); opacity: 0; }
     }
 
     /* ===== Logo pulsant + halo ===== */
@@ -98,6 +103,37 @@
     .reveal { opacity:0; transform: translateY(18px) scale(.98); filter:saturate(.9);
       transition: opacity .75s ease, transform .75s ease, filter .75s ease; will-change: opacity, transform, filter; }
     .reveal.in-view { opacity:1; transform:none; filter:saturate(1); }
+
+    /* ===== Mises en valeur du numéro ===== */
+    .call-banner{
+      position:relative; border:1px solid rgba(234,179,8,.35);
+      background:linear-gradient(135deg, rgba(11,10,6,.6), rgba(16,12,4,.6));
+      border-radius:.9rem; padding:.9rem 1.1rem;
+      box-shadow:0 0 22px rgba(230,181,80,.15);
+    }
+    .call-banner .num{
+      background:linear-gradient(90deg,#f1dd9a,#e6c57a,#c7922e);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      font-weight:800;
+    }
+
+    /* Bouton flottant d'appel */
+    .fab-call{
+      position:fixed; right:16px; bottom:16px; z-index:50;
+      width:56px; height:56px; border-radius:9999px;
+      background:linear-gradient(125deg,#b58e2a 0%,#e6c57a 45%,#c7922e 100%);
+      color:#111; display:flex; align-items:center; justify-content:center;
+      box-shadow:0 10px 30px rgba(230,181,80,.35);
+    }
+    .fab-call::before{
+      content:""; position:absolute; inset:0; border-radius:9999px;
+      border:2px solid rgba(230,181,80,.55);
+      animation:ringPulse 1.8s ease-out infinite;
+    }
+    .fab-call:hover{ transform: translateY(-2px); }
+    @media (min-width: 768px){
+      .fab-call{ right:24px; bottom:24px; }
+    }
   </style>
 </head>
 
@@ -129,7 +165,7 @@
     </div>
 
     <!-- Hero -->
-    <section class="max-w-6xl mx-auto px-4 pt-14 pb-12 grid md:grid-cols-2 gap-10 items-center">
+    <section class="max-w-6xl mx-auto px-4 pt-14 pb-6 grid md:grid-cols-2 gap-10 items-center">
       <div>
         <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400">
@@ -138,7 +174,7 @@
 
           <!-- disciplines mentales -->
           <span class="text-or">
-            Numérologie Guématria & Astrologie — Voyance pure
+            Numérologie Gématria & Astrologie — Voyance pure
           </span><br/>
 
           <!-- disciplines divinatoires -->
@@ -161,11 +197,20 @@
           <a href="#contact" class="btn-or-amber pulse">Me contacter</a>
           <a href="#apropos" class="btn-rose">Numérologie • Astrologie • Tarot</a>
         </div>
+
+        <!-- Ruban d'appel sous le Hero -->
+        <div class="mt-6 call-banner">
+          <a href="tel:+33782580716" class="flex items-center justify-center gap-3">
+            <span class="text-amber-soft">📞</span>
+            <span class="num text-xl md:text-2xl tracking-wide">07 82 58 07 16</span>
+            <span class="sr-only">Appeler maintenant</span>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- Tarifs -->
-    <section id="tarifs" class="max-w-6xl mx-auto px-4 py-16">
+    <section id="tarifs" class="max-w-6xl mx-auto px-4 py-12">
       <h2 class="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-fuchsia-400 to-purple-400">Tarifs</h2>
 
       <div class="mt-6 grid md:grid-cols-3 gap-6">
@@ -226,16 +271,17 @@
       </div>
     </section>
 
-    <!-- À propos -->
+    <!-- À propos (TEXTE ORIGINAL, SANS MODIFICATION) -->
     <section id="apropos" class="max-w-3xl mx-auto px-4 py-16">
       <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">À propos</h2>
-      <p class="mt-4 text-slate-300 leading-relaxed">
-        Je suis Ariane.<br><br>
-        Ayant un don et une forte culture symbolique, je me mets à votre service en utilisant
-        la numérologie Guématria, l’astrologie, la voyance pure et le Tarot de Marseille.<br><br>
-        Mon travail vise à éclairer votre chemin, révéler ce qui est caché, dénouer vos blocages,
-        et vous guider vers vos meilleurs choix. Les séances sont disponibles au téléphone, en visio, en ligne
-        et en Vaucluse (Carpentras, Avignon, Orange) ainsi qu’à mon domicile.
+      <p class="mt-4 text-slate-300">
+       Je suis Ariane.<br><br>
+       Ayant un don, je le met à votre service en utilisant la numérologie Guématria Hébraïque Kabbalistique et le tarot de Marseille.<br><br>
+       Je vous guide vers une compréhension plus profonde de votre chemin de vie, et de ce qui est caché.<br><br>
+       Ces outils révèlent vos blocages, vos forces, montrent les vérités et prédit votre destin.<br><br>
+       Chaque séance est une clé de clarté et de transformation : un vrai éclairage qui vous permet d'avoir une réelle prise de conscience.<br><br>
+       Les séances sont disponibles au téléphone, en visio, en ligne et en Vaucluse (Carpentras, Avignon, Orange) et à mon domicile.<br><br>
+       📩 Contact par mail, Instagram ou téléphone.
       </p>
     </section>
 
@@ -243,8 +289,10 @@
     <section id="contact" class="max-w-3xl mx-auto px-4 py-16">
       <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">Contact</h2>
 
-      <div class="mt-5">
-        <a href="#contact" class="btn-or-amber pulse">Contact</a>
+      <!-- GROS CTA téléphone -->
+      <div class="mt-5 flex flex-col sm:flex-row gap-3">
+        <a href="tel:+33782580716" class="btn-or-amber pulse text-lg md:text-xl flex-1 text-center">📞 Appeler maintenant — 07 82 58 07 16</a>
+        <a href="mailto:ariana.pcss@proton.me" class="btn-rose text-center">Écrire un email</a>
       </div>
 
       <div class="mt-6 flex flex-wrap gap-3">
@@ -306,6 +354,11 @@
     </div>
   </footer>
 
+  <!-- Bouton flottant d'appel -->
+  <a href="tel:+33782580716" class="fab-call" aria-label="Appeler Filariane">
+    📞
+  </a>
+
   <!-- Script apparition fluide -->
   <script>
     document.getElementById('annee').textContent = new Date().getFullYear();
@@ -326,4 +379,3 @@
   </script>
 </body>
 </html>
-
