@@ -3,15 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Filariane — Numérologie Gématria, Astrologie, Voyance pure, Tarot de Marseille & Rituels sacrés</title>
+  <title>Filariane — Numérologie Guématria, Astrologie, Voyance pure, Tarot de Marseille & Rituels sacrés</title>
   <meta name="description" content="Numérologie Guématria, astrologie, voyance pure, tarot de Marseille et rituels sacrés. Consultations en ligne, téléphone ou à Avignon / Carpentras." />
   <link rel="canonical" href="https://filarianenumerologie.com/" />
   <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Filariane — Numérologie, Astrologie, Voyance pure, Tarot & Rituels sacrés" />
-  <meta property="og:description" content="Guidance par numérologie Gématria, astrologie, voyance pure, tarot de Marseille. En ligne ou à Avignon/Carpentras." />
+  <meta property="og:title" content="Filariane — Numérologie, Astrologie, Voyance, Tarot & Rituels" />
+  <meta property="og:description" content="Guidance par numérologie Guématria, astrologie, voyance pure, tarot et rituels sacrés. En ligne ou à Avignon/Carpentras." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://filarianenumerologie.com/" />
-
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
@@ -55,6 +54,11 @@
       overflow:hidden;transition:all .4s ease;
     }
     .btn-or-amber:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(230,181,80,.4);}
+    .btn-or-amber::after{
+      content:"";position:absolute;top:-30%;bottom:-30%;left:-60%;width:50%;
+      background:linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.12),rgba(255,255,255,0));
+      mix-blend-mode:screen;filter:blur(2px);animation:sheen 5s linear infinite;
+    }
     .btn-or-amber.pulse { animation: amberPulse 4s ease-in-out infinite; }
 
     /* ===== Titres dorés ===== */
@@ -64,7 +68,7 @@
       display:inline-block;animation:breathe 4s ease-in-out infinite;
     }
 
-    /* ===== Halos ===== */
+    /* ===== Halos & cards ===== */
     .glow-wrap{ position:relative; border-radius:1rem; }
     .glow-wrap::before{
       content:""; position:absolute; inset:-14px; border-radius:inherit;
@@ -78,20 +82,21 @@
       border-radius:1rem; overflow:hidden; padding:1.5rem; backdrop-filter: blur(1px);
     }
 
+    /* Encadré rituels (halo doux) */
+    .glow-wrap-soft{ position:relative; border-radius:1rem; }
     .glow-wrap-soft::before{
       content:""; position:absolute; inset:-12px; border-radius:inherit;
       background: radial-gradient(120% 120% at 50% 0%, rgba(236,72,153,.20) 0%, rgba(168,85,247,.18) 55%, transparent 72%);
       filter: blur(18px); animation: outerGlow 6s ease-in-out infinite; pointer-events:none; z-index:0;
     }
-
     .rituels-card{
       position:relative; z-index:1; background: rgba(12,12,20,.6);
       border: 1px solid rgba(100,116,139,.35); border-radius:1rem; padding:1.5rem;
     }
 
-    /* ===== FAQ apparition ===== */
+    /* Apparition fluide */
     .reveal { opacity:0; transform: translateY(18px) scale(.98); filter:saturate(.9);
-      transition: opacity .75s ease, transform .75s ease, filter .75s ease; }
+      transition: opacity .75s ease, transform .75s ease, filter .75s ease; will-change: opacity, transform, filter; }
     .reveal.in-view { opacity:1; transform:none; filter:saturate(1); }
   </style>
 </head>
@@ -100,14 +105,13 @@
 
   <!-- Header -->
   <header class="sticky top-0 z-40 border-b border-slate-800/70 bg-slate-900/70 backdrop-blur">
-    <div class="max
-        <a href="/" class="logo-pulse text-lg">Filariane</a>
-        <nav class="flex gap-6">
-          <a href="#tarot" class="text-fuchsia-300 hover:text-fuchsia-400 transition">Tarot</a>
-          <a href="#apropos" class="text-fuchsia-300 hover:text-fuchsia-400 transition">À propos</a>
-          <a href="#contact" class="text-fuchsia-300 hover:text-fuchsia-400 transition">Contact</a>
-        </nav>
-      </div>
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="logo-pulse text-lg">Filariane</a>
+      <nav class="flex gap-6">
+        <a href="#tarot" class="text-fuchsia-300 hover:text-fuchsia-400 transition">Tarot</a>
+        <a href="#apropos" class="text-fuchsia-300 hover:text-fuchsia-400 transition">À propos</a>
+        <a href="#contact" class="text-fuchsia-300 hover:text-fuchsia-400 transition">Contact</a>
+      </nav>
     </div>
   </header>
 
@@ -120,13 +124,13 @@
       <a href="/carpentras.html" class="text-fuchsia-300 hover:underline">Numérologie Carpentras</a>
       <span class="text-slate-500">•</span>
       <a href="/en-ligne.html" class="text-fuchsia-300 hover:underline">Consultations en ligne</a>
+      <span class="text-slate-500">•</span>
+      <a href="/astrologie.html" class="text-fuchsia-300 hover:underline">Astrologie</a>
     </div>
 
     <!-- Hero -->
     <section class="max-w-6xl mx-auto px-4 pt-14 pb-12 grid md:grid-cols-2 gap-10 items-center">
       <div>
-
-        <!-- NOUVEAU TITRE COMPLET INTÉGRÉ -->
         <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400">
             Filariane
@@ -134,7 +138,7 @@
 
           <!-- disciplines mentales -->
           <span class="text-or">
-            Numérologie Gématria & Astrologie — Voyance pure
+            Numérologie Guématria & Astrologie — Voyance pure
           </span><br/>
 
           <!-- disciplines divinatoires -->
@@ -144,7 +148,7 @@
         </h1>
 
         <p class="mt-4 text-lg text-slate-300">
-          Consultations de numérologie, astrologie, voyance pure, tarot de Marseille et rituels sacrés pour éclairer votre chemin de vie — en ligne ou dans le Vaucluse.
+          Consultations de numérologie, astrologie, voyance pure, tarot de Marseille et rituels sacrés — en ligne ou dans le Vaucluse (Avignon, Carpentras, Orange).
         </p>
 
         <div class="mt-6 flex justify-center">
@@ -155,17 +159,16 @@
         <div class="mt-8 flex flex-wrap gap-4">
           <a href="#tarifs" class="btn-rose">Voir les tarifs</a>
           <a href="#contact" class="btn-or-amber pulse">Me contacter</a>
+          <a href="#apropos" class="btn-rose">Numérologie • Astrologie • Tarot</a>
         </div>
       </div>
     </section>
 
-    <!-- TARIFS -->
+    <!-- Tarifs -->
     <section id="tarifs" class="max-w-6xl mx-auto px-4 py-16">
       <h2 class="text-2xl md:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-fuchsia-400 to-purple-400">Tarifs</h2>
 
       <div class="mt-6 grid md:grid-cols-3 gap-6">
-
-        <!-- Carte 1 -->
         <div class="glow-wrap reveal">
           <div class="price-card">
             <h3 class="text-xl font-semibold text-or">Tirage simple</h3>
@@ -177,7 +180,6 @@
           </div>
         </div>
 
-        <!-- Carte 2 -->
         <div class="glow-wrap reveal">
           <div class="price-card">
             <h3 class="text-xl font-semibold text-or">Numérologie + tirage</h3>
@@ -189,7 +191,6 @@
           </div>
         </div>
 
-        <!-- Carte 3 -->
         <div class="glow-wrap reveal">
           <div class="price-card">
             <h3 class="text-xl font-semibold text-or">Guidance & suivi</h3>
@@ -200,70 +201,100 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- À PROPOS -->
+    <!-- Rituels sacrés -->
+    <section id="rituels" class="max-w-6xl mx-auto px-4 pb-6">
+      <div class="glow-wrap-soft">
+        <div class="rituels-card">
+          <h2 class="text-2xl font-bold text-fuchsia-300">Rituels sacrés</h2>
+          <p class="mt-3 text-slate-300">
+            Travaux énergétiques en accompagnement de la voyance et du tarot (lune, amour, protection, abondance), réalisés dans le respect du sacré et du libre arbitre.
+            Préparation personnalisée selon votre thème et vos cycles.
+          </p>
+          <ul class="mt-4 grid md:grid-cols-3 gap-3 text-slate-300">
+            <li class="rounded-lg border border-slate-700/70 px-4 py-3">Rituels lunaires (nouvelle / pleine lune)</li>
+            <li class="rounded-lg border border-slate-700/70 px-4 py-3">Harmonisation & protection</li>
+            <li class="rounded-lg border border-slate-700/70 px-4 py-3">Ouverture des voies & abondance</li>
+          </ul>
+          <div class="mt-5 flex gap-3">
+            <a href="#contact" class="btn-or-amber">Parler de mon rituel</a>
+            <a href="/astrologie.html" class="btn-rose">Lien avec l’astrologie</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- À propos -->
     <section id="apropos" class="max-w-3xl mx-auto px-4 py-16">
       <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">À propos</h2>
       <p class="mt-4 text-slate-300 leading-relaxed">
         Je suis Ariane.<br><br>
         Ayant un don et une forte culture symbolique, je me mets à votre service en utilisant
         la numérologie Guématria, l’astrologie, la voyance pure et le Tarot de Marseille.<br><br>
-
         Mon travail vise à éclairer votre chemin, révéler ce qui est caché, dénouer vos blocages,
-        et vous guider vers votre destin.<br><br>
-
-        Les séances sont disponibles au téléphone, en visio, en ligne et en Vaucluse
-        (Carpentras, Avignon, Orange) ainsi qu’à mon domicile.
+        et vous guider vers vos meilleurs choix. Les séances sont disponibles au téléphone, en visio, en ligne
+        et en Vaucluse (Carpentras, Avignon, Orange) ainsi qu’à mon domicile.
       </p>
     </section>
 
-    <!-- Contact principal pulsant -->
-    <div class="max-w-3xl mx-auto px-4">
-      <a href="#contact" class="btn-or-amber pulse text-lg">Contact</a>
-    </div>
-
-    <!-- Contacts -->
+    <!-- Contact -->
     <section id="contact" class="max-w-3xl mx-auto px-4 py-16">
       <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">Contact</h2>
 
+      <div class="mt-5">
+        <a href="#contact" class="btn-or-amber pulse">Contact</a>
+      </div>
+
       <div class="mt-6 flex flex-wrap gap-3">
-        <a href="mailto:ariana.pcss@proton.me"
-           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60 hover:bg-slate-900/80 transition">
-          <span class="text-amber-soft">📧 ariana.pcss@proton.me</span>
+        <a href="mailto:ariana.pcss@proton.me" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60 hover:bg-slate-900/80 transition">
+          <span class="text-amber-soft">ariana.pcss@proton.me</span>
         </a>
-
-        <a href="https://instagram.com/sandra_cnx" target="_blank"
-           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60 hover:bg-slate-900/80 transition">
-          <span class="text-amber-soft">📸 @sandra_cnx</span>
+        <a href="https://instagram.com/sandra_cnx" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60 hover:bg-slate-900/80 transition">
+          <span class="text-amber-soft">@sandra_cnx</span>
         </a>
-
-        <a href="tel:+33782580716"
-           class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60 hover:bg-slate-900/80 transition">
-          <span class="text-amber-soft">📞 07 82 58 07 16</span>
+        <a href="tel:+33782580716" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-amber-soft bg-slate-900/60 hover:bg-slate-900/80 transition">
+          <span class="text-amber-soft">07 82 58 07 16</span>
         </a>
       </div>
 
-      <!-- Formulaire -->
       <form class="mt-6 p-6 rounded-2xl border border-fuchsia-500/40 bg-slate-900/60 shadow"
             action="mailto:ariana.pcss@proton.me" method="post" enctype="text/plain">
         <label class="block text-sm">Votre nom
-          <input class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100" type="text" name="Nom" required>
+          <input class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100 placeholder-slate-400" type="text" name="Nom" required>
         </label>
-
         <label class="block text-sm mt-4">Votre email
-          <input class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100" type="email" name="Email" required>
+          <input class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100 placeholder-slate-400" type="email" name="Email" required>
         </label>
-
         <label class="block text-sm mt-4">Message
-          <textarea class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100"
-                    name="Message" rows="4" required></textarea>
+          <textarea class="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950/60 p-3 text-slate-100" name="Message" rows="4" required></textarea>
         </label>
-
         <button class="mt-5 px-5 py-3 btn-rose" type="submit">Envoyer</button>
       </form>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="max-w-3xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-fuchsia-300">FAQ</h2>
+      <div class="mt-6 space-y-6">
+        <div class="p-5 rounded-xl border border-slate-700/60 bg-slate-900/40 reveal">
+          <h3 class="font-semibold text-slate-100">Proposes-tu des séances à distance ?</h3>
+          <p class="mt-2 text-slate-300">Oui, au téléphone ou en visio, en plus des séances en Vaucluse (Avignon, Carpentras, Orange).</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-700/60 bg-slate-900/40 reveal">
+          <h3 class="font-semibold text-slate-100">Quelle différence entre numérologie Guématria et astrologie ?</h3>
+          <p class="mt-2 text-slate-300">La Guématria s’appuie sur les nombres liés au nom et à la date de naissance. L’astrologie travaille avec le thème natal et les transits. Je peux combiner les deux selon votre besoin.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-700/60 bg-slate-900/40 reveal">
+          <h3 class="font-semibold text-slate-100">Les rituels sacrés, c’est pour qui ?</h3>
+          <p class="mt-2 text-slate-300">Pour accompagner une intention (protection, amour, abondance) dans le respect de l’éthique et du libre arbitre. Ils sont personnalisés selon vos cycles.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-700/60 bg-slate-900/40 reveal">
+          <h3 class="font-semibold text-slate-100">Comment réserver une séance ?</h3>
+          <p class="mt-2 text-slate-300">Contacte-moi par email, Instagram ou téléphone. Tu peux aussi cliquer sur “Choisir” dans la section Tarifs.</p>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -275,7 +306,7 @@
     </div>
   </footer>
 
-  <!-- Animation scroll -->
+  <!-- Script apparition fluide -->
   <script>
     document.getElementById('annee').textContent = new Date().getFullYear();
 
@@ -293,6 +324,6 @@
 
     items.forEach(el => io.observe(el));
   </script>
-
 </body>
 </html>
+
