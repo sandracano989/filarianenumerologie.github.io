@@ -46,7 +46,7 @@
       0%, 100% { opacity: 0.2; transform: scale(1); }
       50% { opacity: 1; transform: scale(1.4); }
     }
-    .hero h1, .hero p, .cta-button, .portrait-wrapper {
+    .hero h1, .hero p, .cta-button, .portrait-wrapper, .accroche, .arrow-bounce {
       z-index: 1;
       position: relative;
     }
@@ -62,6 +62,17 @@
       color: #f3e9ff;
       text-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
     }
+    .accroche {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #ffdead;
+      font-style: italic;
+      animation: pulseText 3s infinite;
+    }
+    @keyframes pulseText {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; text-shadow: 0 0 12px rgba(255, 255, 200, 0.3); }
+    }
     .cta-button {
       display: inline-block;
       margin-top: 25px;
@@ -75,6 +86,23 @@
       box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
       text-decoration: none;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .cta-button::after {
+      content: "";
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      right: -8px;
+      bottom: -8px;
+      border-radius: 12px;
+      background: rgba(255, 215, 0, 0.15);
+      animation: glowPulse 2.5s ease-in-out infinite;
+      z-index: -1;
+    }
+    @keyframes glowPulse {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.05); }
     }
     .cta-button:hover {
       transform: scale(1.05);
@@ -114,6 +142,15 @@
       position: relative;
       z-index: 1;
       display: block;
+    }
+    .arrow-bounce {
+      font-size: 2em;
+      margin-top: 10px;
+      animation: bounce 1.8s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
     }
     .section {
       max-width: 600px;
@@ -162,9 +199,11 @@
     <h1>Lecture Spirituelle Personnalisée</h1>
     <p>Gématria • Astrologie • Tarot</p>
     <p>Pour comprendre les énergies qui influencent ta vie en ce moment.</p>
+    <p class="accroche">✨ Ta guidance t’attend. Elle t’est destinée maintenant. ✨</p>
     <a class="cta-button" href="https://wa.me/33782580716?text=Bonjour%2C%20je%20souhaite%20recevoir%20ma%20guidance%20personnalis%C3%A9e%20avec%20g%C3%A9matria%2C%20astrologie%20et%20tarot.%20">
       Recevoir ma guidance sur WhatsApp
     </a>
+    <div class="arrow-bounce">⬇️</div>
     <div class="portrait-wrapper">
       <img src="photog.jpg" alt="Photo de Filariane" class="portrait">
     </div>
@@ -182,3 +221,4 @@
   </div>
 </body>
 </html>
+
