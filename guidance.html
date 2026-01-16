@@ -85,24 +85,24 @@
       position: relative;
       width: 160px;
       height: 160px;
+      margin-left: auto;
       margin-right: auto;
-      margin-left: 10%; /* décalage vers la gauche */
     }
     .portrait-wrapper::before {
       content: "";
       position: absolute;
-      top: -10px;
-      left: -10px;
-      right: -10px;
-      bottom: -10px;
+      top: -15px;
+      left: -15px;
+      right: -15px;
+      bottom: -15px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,215,0,0.3) 0%, transparent 70%);
-      animation: aura 3s ease-in-out infinite;
+      background: radial-gradient(circle, rgba(255,215,0,0.15) 0%, transparent 70%);
+      animation: aura 4s ease-in-out infinite;
       z-index: 0;
     }
     @keyframes aura {
       0%, 100% { transform: scale(1); opacity: 0.4; }
-      50% { transform: scale(1.1); opacity: 0.8; }
+      50% { transform: scale(1.08); opacity: 0.7; }
     }
     .portrait {
       width: 160px;
@@ -113,6 +113,7 @@
       box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
       position: relative;
       z-index: 1;
+      display: block;
     }
     .section {
       max-width: 600px;
@@ -181,4 +182,3 @@
   </div>
 </body>
 </html>
-
