@@ -6,86 +6,105 @@
   <title>Lecture Spirituelle Personnalisée</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000000 100%);
-      overflow: hidden;
+      background: radial-gradient(ellipse at bottom, #1a0024 0%, #000010 100%);
       color: #ffffff;
+      overflow-x: hidden;
     }
     .hero {
+      position: relative;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
-      padding: 40px 20px;
       text-align: center;
-      position: relative;
+      padding: 40px 20px;
+      background: radial-gradient(ellipse at bottom, #1a0024 0%, #000010 100%);
+      overflow: hidden;
     }
     .stars {
       position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      background: transparent url('https://i.imgur.com/XN1E4UF.gif') repeat top center;
+      background: url('https://assets.codepen.io/1538474/stars-min.png') repeat;
+      animation: moveStars 100s linear infinite;
+      opacity: 0.3;
       z-index: 0;
-      opacity: 0.4;
-      animation: twinkling 20s linear infinite;
     }
-    @keyframes twinkling {
+    @keyframes moveStars {
       from { background-position: 0 0; }
-      to { background-position: -10000px 5000px; }
+      to { background-position: 10000px 10000px; }
     }
-    .hero h1, .hero p, .cta-button {
+    .hero h1, .hero p, .cta-button, .portrait {
       z-index: 1;
+      position: relative;
     }
     .hero h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.5em;
-      text-shadow: 1px 1px 3px #000;
+      font-size: 2.8em;
+      margin-bottom: 0.4em;
+      color: #fffbe6;
+      text-shadow: 0 0 8px rgba(255, 255, 200, 0.3);
     }
     .hero p {
-      font-size: 1.2em;
-      text-shadow: 1px 1px 2px #000;
+      font-size: 1.3em;
+      margin: 0.3em 0;
+      color: #f3e9ff;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
     }
     .cta-button {
       display: inline-block;
-      margin-top: 30px;
-      padding: 15px 30px;
-      background-color: #d4af37;
-      color: #000;
+      margin-top: 25px;
+      padding: 14px 32px;
+      background: linear-gradient(145deg, #ffd700, #cdaa00);
+      color: #2d2000;
       font-size: 1.2em;
       font-weight: bold;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .cta-button:hover {
-      background-color: #bfa133;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
+    }
+    .portrait {
+      margin-top: 30px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ffd700;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
     }
     .section {
       max-width: 600px;
       margin: 40px auto;
       padding: 20px;
       background: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
+      border-radius: 12px;
     }
     .section h2 {
       text-align: center;
       margin-bottom: 20px;
-      color: #f8f8f8;
+      color: #ffeedd;
     }
     .section p {
       font-size: 1.1em;
       line-height: 1.6;
       margin-bottom: 15px;
-      color: #e0e0e0;
+      color: #e6d6ff;
     }
     .disclaimer {
       text-align: center;
       font-size: 0.9em;
-      color: #aaa;
+      color: #999;
       margin: 30px auto;
       max-width: 600px;
     }
@@ -100,6 +119,8 @@
     <a class="cta-button" href="https://wa.me/33782580716?text=Bonjour%2C%20je%20souhaite%20recevoir%20ma%20guidance%20personnalis%C3%A9e%20avec%20g%C3%A9matria%2C%20astrologie%20et%20tarot.%20">
       Recevoir ma guidance sur WhatsApp
     </a>
+    <!-- Photo optionnelle -->
+    <!-- <img src="photo.jpg" alt="Photo de Filariane" class="portrait"> -->
   </div>
 
   <div class="section">
@@ -114,5 +135,3 @@
   </div>
 </body>
 </html>
-
-
