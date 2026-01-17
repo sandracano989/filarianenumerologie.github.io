@@ -46,7 +46,7 @@
       0%, 100% { opacity: 0.2; transform: scale(1); }
       50% { opacity: 1; transform: scale(1.4); }
     }
-    .hero h1, .hero p, .cta-button, .portrait-wrapper, .accroche, .arrow-bounce {
+    .hero h1, .hero p, .cta-button, .portrait-wrapper, .accroche, .arrow-bounce, .whats-note {
       z-index: 1;
       position: relative;
     }
@@ -108,6 +108,13 @@
       transform: scale(1.05);
       box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
     }
+    .whats-note {
+      font-size: 0.95em;
+      color: #ddccff;
+      margin-top: 12px;
+      font-style: italic;
+      opacity: 0.8;
+    }
     .portrait-wrapper {
       margin-top: 40px;
       position: relative;
@@ -142,15 +149,6 @@
       position: relative;
       z-index: 1;
       display: block;
-    }
-    .arrow-bounce {
-      font-size: 2em;
-      margin-top: 10px;
-      animation: bounce 1.8s infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(6px); }
     }
     .section {
       max-width: 600px;
@@ -203,7 +201,8 @@
     <a class="cta-button" href="https://wa.me/33782580716?text=Bonjour%2C%20je%20souhaite%20recevoir%20ma%20guidance%20personnalis%C3%A9e%20avec%20g%C3%A9matria%2C%20astrologie%20et%20tarot.%20">
       Recevoir ma guidance sur WhatsApp
     </a>
-        <div class="portrait-wrapper">
+    <p class="whats-note">Je réponds toujours personnellement, avec soin ✨</p>
+    <div class="portrait-wrapper">
       <img src="photog.jpg" alt="Photo de Filariane" class="portrait">
     </div>
   </div>
@@ -220,3 +219,4 @@
   </div>
 </body>
 </html>
+
